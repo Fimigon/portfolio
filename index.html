@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -311,12 +312,9 @@
         .project-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(45deg, #8a2be2, #4a00e0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            color: white;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .project-info {
@@ -363,12 +361,9 @@
         .media-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(45deg, #4a00e0, #8a2be2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            color: white;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .media-video {
@@ -378,8 +373,47 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #8a2be2;
-            font-size: 50px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .play-button {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: rgba(138, 43, 226, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .play-button:hover {
+            background: rgba(138, 43, 226, 1);
+            transform: scale(1.1);
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
         }
 
         .media-info {
@@ -396,6 +430,44 @@
             font-size: 14px;
             color: #cccccc;
             line-height: 1.5;
+        }
+
+        /* Video Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 80%;
+            max-width: 900px;
+            max-height: 80vh;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .modal-video {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
         }
 
         /* Contact Section */
@@ -443,6 +515,16 @@
         .platform-icon {
             font-size: 50px;
             margin-bottom: 20px;
+        }
+
+        .platform-image {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .discord-icon {
@@ -635,9 +717,7 @@
                     <div class="media-gallery">
                         <div class="media-grid">
                             <div class="media-item">
-                                <div class="media-image">
-                                    <i class="fas fa-cube"></i>
-                                </div>
+                                <div class="media-image" style="background-image: url('https://placehold.co/600x400/4a00e0/8a2be2?text=Building+System');"></div>
                                 <div class="media-info">
                                     <h4 class="media-title">Advanced Building System</h4>
                                     <p class="media-desc">Custom building mechanics with grid snapping, rotation, and material selection.</p>
@@ -645,8 +725,13 @@
                             </div>
                             
                             <div class="media-item">
-                                <div class="media-video">
-                                    <i class="fas fa-play-circle"></i>
+                                <div class="media-video" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                                    <div class="video-thumbnail" style="background-image: url('https://placehold.co/600x400/8a2be2/4a00e0?text=Skill+Tree+Video');">
+                                        <div class="video-overlay"></div>
+                                        <div class="play-button">
+                                            <i class="fas fa-play"></i>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="media-info">
                                     <h4 class="media-title">Skill Tree System</h4>
@@ -655,9 +740,7 @@
                             </div>
                             
                             <div class="media-item">
-                                <div class="media-image">
-                                    <i class="fas fa-users"></i>
-                                </div>
+                                <div class="media-image" style="background-image: url('https://placehold.co/600x400/4a00e0/8a2be2?text=Multiplayer');"></div>
                                 <div class="media-info">
                                     <h4 class="media-title">Multiplayer Framework</h4>
                                     <p class="media-desc">Robust networking system for seamless multiplayer experiences.</p>
@@ -665,8 +748,13 @@
                             </div>
                             
                             <div class="media-item">
-                                <div class="media-video">
-                                    <i class="fas fa-play-circle"></i>
+                                <div class="media-video" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                                    <div class="video-thumbnail" style="background-image: url('https://placehold.co/600x400/8a2be2/4a00e0?text=Inventory+Video');">
+                                        <div class="video-overlay"></div>
+                                        <div class="play-button">
+                                            <i class="fas fa-play"></i>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="media-info">
                                     <h4 class="media-title">Inventory System</h4>
@@ -675,9 +763,7 @@
                             </div>
                             
                             <div class="media-item">
-                                <div class="media-image">
-                                    <i class="fas fa-save"></i>
-                                </div>
+                                <div class="media-image" style="background-image: url('https://placehold.co/600x400/4a00e0/8a2be2?text=Data+Saving');"></div>
                                 <div class="media-info">
                                     <h4 class="media-title">Data Saving System</h4>
                                     <p class="media-desc">Secure and efficient data persistence with automatic backups.</p>
@@ -685,8 +771,13 @@
                             </div>
                             
                             <div class="media-item">
-                                <div class="media-video">
-                                    <i class="fas fa-play-circle"></i>
+                                <div class="media-video" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                                    <div class="video-thumbnail" style="background-image: url('https://placehold.co/600x400/8a2be2/4a00e0?text=Quest+System+Video');">
+                                        <div class="video-overlay"></div>
+                                        <div class="play-button">
+                                            <i class="fas fa-play"></i>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="media-info">
                                     <h4 class="media-title">Quest System</h4>
@@ -703,35 +794,29 @@
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-crown"></i>
-                        </div>
+                        <div class="project-image" style="background-image: url('https://placehold.co/600x400/8a2be2/ffffff?text=Royal+Kingdom');"></div>
                         <div class="project-info">
                             <h3 class="project-title">Royale Kingdom</h3>
                             <p class="project-desc">A medieval battle royale game with custom weapons, spells, and kingdom-building mechanics. Over 10,000 concurrent players.</p>
-                            <a href="#" class="btn">View Details</a>
+                            <a href="https://www.roblox.com/games/123456789/Royale-Kingdom" target="_blank" class="btn">View Details</a>
                         </div>
                     </div>
                     
                     <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-car"></i>
-                        </div>
+                        <div class="project-image" style="background-image: url('https://placehold.co/600x400/4a00e0/ffffff?text=Speed+Racer');"></div>
                         <div class="project-info">
                             <h3 class="project-title">Speed Racer</h3>
                             <p class="project-desc">High-speed racing game with custom car physics, track editor, and multiplayer tournaments.</p>
-                            <a href="#" class="btn">View Details</a>
+                            <a href="https://www.roblox.com/games/987654321/Speed-Racer" target="_blank" class="btn">View Details</a>
                         </div>
                     </div>
                     
                     <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-dragon"></i>
-                        </div>
+                        <div class="project-image" style="background-image: url('https://placehold.co/600x400/6a0dad/ffffff?text=Dragon+Tamer');"></div>
                         <div class="project-info">
                             <h3 class="project-title">Dragon Tamer</h3>
                             <p class="project-desc">Fantasy RPG with dragon breeding, combat systems, and expansive open world exploration.</p>
-                            <a href="#" class="btn">View Details</a>
+                            <a href="https://www.roblox.com/games/456789123/Dragon-Tamer" target="_blank" class="btn">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -747,39 +832,31 @@
                     
                     <div class="contact-platforms">
                         <div class="platform-card">
-                            <div class="platform-icon discord-icon">
-                                <i class="fab fa-discord"></i>
-                            </div>
+                            <div class="platform-image" style="background-image: url('https://placehold.co/100x100/5865F2/ffffff?text=Discord');"></div>
                             <h3 class="platform-name">Discord</h3>
                             <p class="platform-desc">Fastest response time for quick questions and discussions</p>
-                            <a href="#" class="btn">Join Server</a>
+                            <a href="https://discord.gg/your-discord-server" target="_blank" class="btn">Join Server</a>
                         </div>
                         
                         <div class="platform-card">
-                            <div class="platform-icon twitter-icon">
-                                <i class="fab fa-x-twitter"></i>
-                            </div>
+                            <div class="platform-image" style="background-image: url('https://placehold.co/100x100/1DA1F2/ffffff?text=Twitter');"></div>
                             <h3 class="platform-name">X (Twitter)</h3>
                             <p class="platform-desc">Updates, announcements, and public inquiries</p>
-                            <a href="#" class="btn">Follow Me</a>
+                            <a href="https://twitter.com/your-twitter-handle" target="_blank" class="btn">Follow Me</a>
                         </div>
                         
                         <div class="platform-card">
-                            <div class="platform-icon youtube-icon">
-                                <i class="fab fa-youtube"></i>
-                            </div>
+                            <div class="platform-image" style="background-image: url('https://placehold.co/100x100/FF0000/ffffff?text=YouTube');"></div>
                             <h3 class="platform-name">YouTube</h3>
                             <p class="platform-desc">Tutorials, project showcases, and development updates</p>
-                            <a href="#" class="btn">Subscribe</a>
+                            <a href="https://youtube.com/your-youtube-channel" target="_blank" class="btn">Subscribe</a>
                         </div>
                         
                         <div class="platform-card">
-                            <div class="platform-icon github-icon">
-                                <i class="fab fa-github"></i>
-                            </div>
+                            <div class="platform-image" style="background-image: url('https://placehold.co/100x100/333333/ffffff?text=GitHub');"></div>
                             <h3 class="platform-name">GitHub</h3>
                             <p class="platform-desc">Code samples, open-source projects, and technical documentation</p>
-                            <a href="#" class="btn">View Profile</a>
+                            <a href="https://github.com/your-github-username" target="_blank" class="btn">View Profile</a>
                         </div>
                     </div>
                 </div>
@@ -788,14 +865,24 @@
             <!-- Footer -->
             <div class="footer">
                 <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-link github-link"><i class="fab fa-github"></i></a>
+                    <a href="https://discord.gg/your-discord-server" target="_blank" class="social-link"><i class="fab fa-discord"></i></a>
+                    <a href="https://twitter.com/your-twitter-handle" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://youtube.com/your-youtube-channel" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/your-github-username" target="_blank" class="social-link github-link"><i class="fab fa-github"></i></a>
                 </div>
                 <p>© 2025 Fimigon. All rights reserved.</p>
                 <p>Professional Roblox Scripting Services</p>
             </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <video id="modalVideo" class="modal-video" controls>
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 
@@ -806,6 +893,9 @@
             const sections = document.querySelectorAll('.section');
             const orderButtons = document.querySelectorAll('.order-btn');
             const contactButtons = document.querySelectorAll('.contact-btn');
+            const videoModal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modalVideo');
+            const closeModal = document.querySelector('.close-modal');
             
             // Navigation links
             navLinks.forEach(link => {
@@ -858,7 +948,50 @@
                     document.getElementById('contact').classList.add('active');
                 });
             });
+            
+            // Video play functionality
+            const playButtons = document.querySelectorAll('.play-button');
+            playButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const videoContainer = this.closest('.media-video');
+                    const videoSrc = videoContainer.getAttribute('data-video');
+                    
+                    modalVideo.src = videoSrc;
+                    videoModal.style.display = 'flex';
+                    
+                    // Play video after a short delay to ensure it's loaded
+                    setTimeout(() => {
+                        modalVideo.play();
+                    }, 100);
+                });
+            });
+            
+            // Close modal
+            closeModal.addEventListener('click', function() {
+                videoModal.style.display = 'none';
+                modalVideo.pause();
+                modalVideo.currentTime = 0;
+            });
+            
+            // Close modal when clicking outside
+            videoModal.addEventListener('click', function(e) {
+                if (e.target === videoModal) {
+                    videoModal.style.display = 'none';
+                    modalVideo.pause();
+                    modalVideo.currentTime = 0;
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && videoModal.style.display === 'flex') {
+                    videoModal.style.display = 'none';
+                    modalVideo.pause();
+                    modalVideo.currentTime = 0;
+                }
+            });
         });
     </script>
 </body>
 </html>
+```
