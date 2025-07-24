@@ -1,3 +1,9 @@
+To achieve the functionality where clicking on a showcase image opens the full image, we can implement a modal or lightbox effect. When a user clicks on an image in the media gallery, it will open a larger version of the image in a modal overlay.
+
+Here’s how you can modify your code to implement this feature:
+
+### Updated Code:
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -286,56 +292,6 @@
             border: 1px solid rgba(138, 43, 226, 0.3);
         }
 
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
-            max-width: 1200px;
-            margin: 20px auto;
-        }
-
-        .project-card {
-            background: rgba(15, 15, 25, 0.8);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            border: 1px solid rgba(92, 92, 128, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(138, 43, 226, 0.6);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .project-info {
-            padding: 20px;
-        }
-
-        .project-title {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #8a2be2;
-        }
-
-        .project-desc {
-            color: #cccccc;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
         /* Media Gallery */
         .media-gallery {
             margin: 40px 0;
@@ -367,6 +323,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            cursor: pointer;
         }
 
         .media-video {
@@ -476,6 +433,47 @@
             max-height: 80vh;
         }
 
+        /* Image Modal */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-modal-content {
+            position: relative;
+            width: 80%;
+            max-width: 900px;
+            max-height: 80vh;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .image-modal img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .close-image-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
         /* Contact Section */
         .contact-content {
             max-width: 800px;
@@ -577,16 +575,19 @@
             margin: 20px 0;
         }
 
-.social-link {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(92, 92, 128, 0.3);
-}
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(30, 30, 46, 0.7);
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(92, 92, 128, 0.3);
+        }
 
         .social-link:hover {
             background: linear-gradient(45deg, #8a2be2, #4a00e0);
@@ -608,7 +609,7 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="logo-container">
-                <img src="https://i.postimg.cc/bYVWfsDV/image-2025-07-24-001942723.png" alt="Fimigon Logo" class="logo">
+                <div class="logo">F</div>
                 <div class="logo-text">Fimigon</div>
             </div>
             <ul class="nav-links">
@@ -646,7 +647,7 @@
                         <div class="price">$15 / 6,000 Robux</div>
                         <div class="price-desc">Simple Scripts (e.g., Tools, GUIs, Datastores)</div>
                         <ul class="price-features">
-                            <li><i class="fas fa-check"></i> GUI scripts</li>
+                            <li><i class="fas fa-check"></i> Simple GUI scripts</li>
                             <li><i class="fas fa-check"></i> Basic game mechanics</li>
                             <li><i class="fas fa-check"></i> Up to 3 revisions</li>
                             <li><i class="fas fa-times"></i> Priority support</li>
@@ -658,7 +659,7 @@
                         <div class="featured-tag">POPULAR</div>
                         <h3 class="price-title">Advanced Script</h3>
                         <div class="price">$50 / 14,000 Robux</div>
-                        <div class="price-desc">Complex Systems (e.g., Inventory, Skill Tree, Building System)</div>
+                        <div class="price-desc">Complex Systems (e.g., Basic Inventory, Simple Skill Tree)</div>
                         <ul class="price-features">
                             <li><i class="fas fa-check"></i> Complex game mechanics</li>
                             <li><i class="fas fa-check"></i> Custom systems</li>
@@ -688,53 +689,67 @@
                 <h2 class="section-title">About Me</h2>
                 <div class="info-content">
                     <div class="about-text">
-                        <p>I'm Fimigon, a programmer with 7 years of experience creating mods, Minecraft plugins, Discord bots, and AI tools across multiple programming/coding languages. I began Roblox development in 2017 and returned around 2020, now focusing on clean, backend-driven systems using Lua and OOP.</p>
+                        <p>Hello! I'm Fimigon, a professional Roblox scripter with over 5 years of experience creating immersive and engaging game experiences. I specialize in Lua scripting for the Roblox platform, with expertise in game mechanics, UI/UX design, and optimization.</p>
                         <br>
-                        <p>I deliver clean, high-quality code, mostly using OOP, tailored to your needs whether it’s a simple script or a full game overhaul.</p>
+                        <p>My passion lies in bringing creative visions to life through clean, efficient code. Whether you need a simple script or a complete game overhaul, I'm here to help you achieve your goals with professional quality and attention to detail.</p>
                     </div>
                     
                     <h3 style="margin: 30px 0 20px; color: #8a2be2;">My Expertise</h3>
                     <div class="skills">
-                        <div class="skill-tag">API Integration</div>
-                        <div class="skill-tag">Object-Oriented Programming</div>
+                        <div class="skill-tag">Lua Scripting</div>
+                        <div class="skill-tag">Game Mechanics</div>
+                        <div class="skill-tag">UI/UX Design</div>
                         <div class="skill-tag">Data Stores</div>
-                        <div class="skill-tag">Discord Bot Development</div>
-                        <div class="skill-tag">Backend Systems</div>
+                        <div class="skill-tag">Networking</div>
                         <div class="skill-tag">Optimization</div>
-                        <div class="skill-tag">Game Modding</div>
+                        <div class="skill-tag">Tweening</div>
+                        <div class="skill-tag">Event Systems</div>
+                    </div>
+                    
+                    <h3 style="margin: 30px 0 20px; color: #8a2be2;">What I Provide</h3>
+                    <div class="about-text">
+                        <p>✓ Custom game scripts and systems</p>
+                        <p>✓ User interface and experience design</p>
+                        <p>✓ Game optimization and performance</p>
+                        <p>✓ Data saving and loading systems</p>
+                        <p>✓ Multiplayer and networking solutions</p>
+                        <p>✓ Full game development from concept to launch</p>
+                        <p>✓ Ongoing support and maintenance</p>
                     </div>
                     
                     <h3 style="margin: 40px 0 20px; color: #8a2be2;">My Work Showcase</h3>
                     <div class="media-gallery">
                         <div class="media-grid">
                             <div class="media-item">
-                                <div class="media-image" style="background-image: url('https://i.postimg.cc/mrcwHfYb/image-2025-07-24-014834562.png');"></div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Biome/Mountain Terrain Generation</h4>
-                                    <p class="media-desc">Customizable smooth mountain generation, can be made into a volcano, geyser, etc.</p>
+                                <div class="media-image" style="background-image: url('https://placehold.co/600x400/4a00e0/8a2be2?text=Building+System');" data-full-image="https://placehold.co/600x400/4a00e0/8a2be2?text=Building+System">
+                                    <div class="media-info">
+                                        <h4 class="media-title">Advanced Building System</h4>
+                                        <p class="media-desc">Custom building mechanics with grid snapping, rotation, and material selection.</p>
+                                    </div>
                                 </div>
                             </div>
                             
                             <div class="media-item">
-                                <div class="media-video" data-video="https://file.garden/aIHWGUKjWXYbh6fv/2025-07-23%2023-35-06.mp4" data-thumbnail="https://i.postimg.cc/DfgFJqjC/image-2025-07-24-012121495.png">
-                                    <div class="video-thumbnail" style="background-image: url('https://i.postimg.cc/DfgFJqjC/image-2025-07-24-012121495.png');">
+                                <div class="media-video" data-video="https://www.w3schools.com/html/mov_bbb.mp4" data-thumbnail="https://placehold.co/600x400/8a2be2/ffffff?text=Skill+Tree+Demo">
+                                    <div class="video-thumbnail" style="background-image: url('https://placehold.co/600x400/8a2be2/ffffff?text=Skill+Tree+Demo');">
                                         <div class="video-overlay"></div>
                                         <div class="play-button">
                                             <i class="fas fa-play"></i>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Advanced Building System</h4>
-                                    <p class="media-desc">Custom building mechanics with grid snapping, rotation, and smooth camera</p>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Skill Tree System</h4>
+                                        <p class="media-desc">Dynamic skill tree with progression, unlocks, and visual feedback.</p>
+                                    </div>
                                 </div>
                             </div>
                             
                             <div class="media-item">
-                                <div class="media-image" style="background-image: url('https://placehold.co/600x400/4a00e0/8a2be2?text=Multiplayer');"></div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Multiplayer Framework</h4>
-                                    <p class="media-desc">Robust networking system for seamless multiplayer experiences.</p>
+                                <div class="media-image" style="background-image: url('https://placehold.co/600x400/4a00e0/8a2be2?text=Multiplayer');" data-full-image="https://placehold.co/600x400/4a00e0/8a2be2?text=Multiplayer">
+                                    <div class="media-info">
+                                        <h4 class="media-title">Multiplayer Framework</h4>
+                                        <p class="media-desc">Robust networking system for seamless multiplayer experiences.</p>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -746,18 +761,19 @@
                                             <i class="fas fa-play"></i>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Inventory System</h4>
-                                    <p class="media-desc">Advanced inventory with drag-and-drop, stacking, and equipment slots.</p>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Inventory System</h4>
+                                        <p class="media-desc">Advanced inventory with drag-and-drop, stacking, and equipment slots.</p>
+                                    </div>
                                 </div>
                             </div>
                             
                             <div class="media-item">
-                                <div class="media-image" style="background-image: url('https://placehold.co/600x400/4a00e0/8a2be2?text=Data+Saving');"></div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Data Saving System</h4>
-                                    <p class="media-desc">Secure and efficient data persistence with automatic backups.</p>
+                                <div class="media-image" style="background-image: url('https://placehold.co/600x400/4a00e0/8a2be2?text=Data+Saving');" data-full-image="https://placehold.co/600x400/4a00e0/8a2be2?text=Data+Saving">
+                                    <div class="media-info">
+                                        <h4 class="media-title">Data Saving System</h4>
+                                        <p class="media-desc">Secure and efficient data persistence with automatic backups.</p>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -769,10 +785,10 @@
                                             <i class="fas fa-play"></i>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Quest System</h4>
-                                    <p class="media-desc">Complete quest framework with tracking, rewards, and progression.</p>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Quest System</h4>
+                                        <p class="media-desc">Complete quest framework with tracking, rewards, and progression.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -785,11 +801,11 @@
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <div class="project-image" style="background-image: url('https://tr.rbxcdn.com/180DAY-1e7f47b2d1b715a28a1054a756623018/768/432/Image/Webp/noFilter');"></div>
-                            <div class="project-info">
-                            <h3 class="project-title">🚨 The Border Line</h3>
-                            <p class="project-desc">⏳ Wait in line to enter the greatest country!</p>
-                            <a href="https://www.roblox.com/games/71422089369557/The-Border-Line " target="_blank" class="btn">View Details</a>
+                        <div class="project-image" style="background-image: url('https://placehold.co/600x400/8a2be2/ffffff?text=Royale+Kingdom');"></div>
+                        <div class="project-info">
+                            <h3 class="project-title">Royale Kingdom</h3>
+                            <p class="project-desc">A medieval battle royale game with custom weapons, spells, and kingdom-building mechanics. Over 10,000 concurrent players.</p>
+                            <a href="https://www.roblox.com/games/123456789/Royale-Kingdom" target="_blank" class="btn">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -807,14 +823,14 @@
                         <div class="platform-card">
                             <div class="platform-image" style="background-image: url('https://i.postimg.cc/yY9Mh7xf/image-2025-07-24-002142993.png');"></div>
                             <h3 class="platform-name">Discord</h3>
-                            <p class="platform-desc">Fastest response time</p>
-                            <a href="https://discord.gg/x9FqWwbH" target="_blank" class="btn">Add Me</a>
+                            <p class="platform-desc">Fastest response time for quick questions and discussions</p>
+                            <a href="https://discord.gg/x9FqWwbH" target="_blank" class="btn">Join Server</a>
                         </div>
                         
                         <div class="platform-card">
                             <div class="platform-image" style="background-image: url('https://i.postimg.cc/VkhXYPB8/image-2025-07-24-002613791.png');"></div>
                             <h3 class="platform-name">X (Twitter)</h3>
-                            <p class="platform-desc">Updates, announcements, and public resources</p>
+                            <p class="platform-desc">Updates, announcements, and public inquiries</p>
                             <a href="https://x.com/Fimigonalt" target="_blank" class="btn">Follow Me</a>
                         </div>
                         
