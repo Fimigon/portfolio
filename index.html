@@ -111,17 +111,16 @@
 
         .menu-toggle {
             display: none;
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
             background: none;
             border: none;
             color: white;
             font-size: 24px;
             cursor: pointer;
             z-index: 101;
-            padding: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .main-content {
@@ -653,11 +652,13 @@
                 padding: 15px 10px;
                 overflow: hidden;
             }
-            .logo-container {
-                justify-content: center;
-                margin-bottom: 20px;
-                padding-bottom: 10px;
-            }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(92, 92, 128, 0.3);
+        }
             .logo {
                 margin-right: 0;
             }
@@ -802,13 +803,13 @@
 <body>
     <div class="container">
         <div class="sidebar">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="logo-container">
                 <img src="https://i.postimg.cc/bYVWfsDV/image-2025-07-24-001942723.png" alt="Fimigon Logo" class="logo">
                 <div class="logo-text">Fimigon</div>
             </div>
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
             <ul class="nav-links">
                 <li class="nav-item">
                     <a href="#" class="nav-link" data-section="info">
@@ -1114,6 +1115,8 @@
 
             document.querySelector('.nav-link[data-section="info"]').classList.add('active');
             document.getElementById('info').classList.add('active');
+            document.querySelector('.nav-link[data-section="prices"]').classList.remove('active');
+            document.getElementById('prices').classList.remove('active');
 
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
