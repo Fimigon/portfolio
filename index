@@ -693,7 +693,7 @@
             }
 
             .sidebar.active {
-                width: 280px;
+                width: 290px;
                 overflow: visible;
             }
             .sidebar.active .logo-text {
@@ -710,8 +710,13 @@
                 margin-right: 15px;
             }
 
+            .sidebar.active .menu-toggle {
+                left: 20px;
+                transform: none;
+            }
+
             .main-content.sidebar-active {
-                margin-left: 280px;
+                margin-left: 290px;
             }
 
             .price-cards {
