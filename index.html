@@ -1,3 +1,6 @@
+Okay, I have removed all the comments from the HTML and CSS code. Here is the updated version without any comments:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,54 +27,24 @@
             min-height: 100vh;
         }
 
-        /* Sidebar Styles */
         .sidebar {
             width: 280px;
             background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(10px);
-            padding: 20px; /* Adjusted padding */
+            padding: 30px 20px;
             position: fixed;
             height: 100vh;
             border-right: 1px solid rgba(92, 92, 128, 0.3);
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
             z-index: 100;
-            display: flex; /* Use flexbox */
-            flex-direction: column; /* Stack children vertically */
-        }
-        /* Hamburger Menu Icon - Now styled like nav items */
-        .menu-toggle {
-            display: none; /* Hidden by default on desktop */
-            background: rgba(30, 30, 46, 0.5);
-            border: 1px solid rgba(92, 92, 128, 0.2);
-            color: #e0e0e0;
-            padding: 15px 20px;
-            border-radius: 10px;
-            font-size: 18px;
-            cursor: pointer;
-            margin-bottom: 20px; /* Space below the button */
-            text-align: left;
-            width: 100%; /* Full width */
-            transition: all 0.3s ease;
-        }
-        .menu-toggle:hover {
-            background: linear-gradient(90deg, rgba(138, 43, 226, 0.3), rgba(74, 0, 224, 0.3));
-            color: #ffffff;
-            border-color: rgba(138, 43, 226, 0.5);
-        }
-        .menu-toggle i {
-            margin-right: 15px;
-            color: #8a2be2;
-        }
-        .menu-toggle:hover i {
-            color: #ffffff;
+            transition: width 0.3s ease, transform 0.3s ease;
         }
         .logo-container {
             display: flex;
             align-items: center;
-            margin-bottom: 30px; /* Adjusted margin */
+            margin-bottom: 40px;
             padding-bottom: 20px;
             border-bottom: 1px solid rgba(92, 92, 128, 0.3);
-            justify-content: center; /* Center logo if needed */
         }
         .logo {
             width: 50px;
@@ -85,6 +58,7 @@
             font-weight: bold;
             font-size: 24px;
             box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+            flex-shrink: 0;
         }
         .logo-text {
             font-size: 28px;
@@ -93,10 +67,13 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+            white-space: nowrap;
+            overflow: hidden;
+            transition: opacity 0.3s ease;
         }
         .nav-links {
             list-style: none;
-            flex-grow: 1; /* Allow nav links to take available space */
+            margin-top: 20px;
         }
         .nav-item {
             margin-bottom: 15px;
@@ -112,6 +89,7 @@
             font-size: 18px;
             background: rgba(30, 30, 46, 0.5);
             border: 1px solid rgba(92, 92, 128, 0.2);
+            white-space: nowrap;
         }
         .nav-link:hover {
             background: linear-gradient(90deg, rgba(138, 43, 226, 0.3), rgba(74, 0, 224, 0.3));
@@ -128,15 +106,32 @@
             margin-right: 15px;
             font-size: 20px;
             color: #8a2be2;
+            min-width: 20px;
         }
         .nav-link:hover i {
             color: #ffffff;
         }
-        /* Main Content Styles */
+
+        .menu-toggle {
+            display: none;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 101;
+            padding: 5px;
+        }
+
         .main-content {
             flex: 1;
             margin-left: 280px;
             padding: 40px;
+            transition: margin-left 0.3s ease;
         }
         .section {
             display: none;
@@ -164,7 +159,7 @@
             text-align: center;
             text-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
         }
-        /* Prices Section */
+
         .price-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -260,7 +255,7 @@
             transform: scale(1.05);
             box-shadow: 0 0 25px rgba(138, 43, 226, 0.7);
         }
-        /* Info Section */
+
         .info-content {
             max-width: 800px;
             margin: 0 auto;
@@ -288,7 +283,7 @@
             font-size: 14px;
             border: 1px solid rgba(138, 43, 226, 0.3);
         }
-        /* Projects Section */
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -331,12 +326,12 @@
             margin-bottom: 15px;
             line-height: 1.6;
         }
-        /* Media Gallery */
+
         .media-gallery {
             margin: 40px 0;
-             background: rgba(15, 15, 25, 0.7); /* Ensure background covers gallery */
-             padding: 20px;
-             border-radius: 15px;
+            background: rgba(15, 15, 25, 0.7);
+            padding: 20px;
+            border-radius: 15px;
         }
         .media-grid {
             display: grid;
@@ -424,7 +419,7 @@
             color: #cccccc;
             line-height: 1.5;
         }
-        /* Image Gallery Modal */
+
         .image-gallery-modal {
             display: none;
             position: fixed;
@@ -509,7 +504,7 @@
             border-color: #4a00e0;
             transform: scale(1.05);
         }
-        /* Video Modal */
+
         .modal {
             display: none;
             position: fixed;
@@ -543,7 +538,7 @@
             height: auto;
             max-height: 80vh;
         }
-        /* Contact Section */
+
         .contact-content {
             max-width: 800px;
             margin: 0 auto;
@@ -615,7 +610,7 @@
             margin-bottom: 20px;
             font-size: 16px;
         }
-        /* Footer */
+
         .footer {
             text-align: center;
             padding: 30px;
@@ -651,54 +646,197 @@
             background: linear-gradient(45deg, #8a2be2, #4a00e0);
         }
 
-        /* Responsive Styles (if you added them previously) */
         @media screen and (max-width: 768px) {
             .menu-toggle {
-                display: block; /* Show hamburger on mobile */
+                display: block;
             }
-            /* Add other responsive styles here if needed */
+
+            .sidebar {
+                width: 60px;
+                padding: 15px 10px;
+                overflow: hidden;
+            }
+            .logo-container {
+                justify-content: center;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+            }
+            .logo {
+                margin-right: 0;
+            }
+            .logo-text {
+                opacity: 0;
+                width: 0;
+            }
+            .nav-links {
+                align-items: center;
+            }
+            .nav-item {
+                margin-bottom: 10px;
+            }
+            .nav-link {
+                justify-content: center;
+                padding: 12px;
+                font-size: 16px;
+            }
+            .nav-link span {
+                display: none;
+            }
+            .nav-link i {
+                margin-right: 0;
+            }
+
+            .main-content {
+                margin-left: 60px;
+                padding: 20px;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+
+            .sidebar.active {
+                width: 280px;
+                overflow: visible;
+            }
+            .sidebar.active .logo-text {
+                opacity: 1;
+                width: auto;
+            }
+            .sidebar.active .nav-link span {
+                display: inline;
+            }
+            .sidebar.active .nav-link {
+                justify-content: flex-start;
+            }
+            .sidebar.active .nav-link i {
+                margin-right: 15px;
+            }
+
+            .main-content.sidebar-active {
+                margin-left: 280px;
+            }
+
+            .price-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .media-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .contact-platforms {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .image-gallery-content,
+            .modal-content {
+                width: 95%;
+            }
+            .gallery-nav button,
+            .close-modal,
+            .close-gallery {
+                font-size: 20px;
+                width: 40px;
+                height: 40px;
+            }
+            .gallery-nav {
+                top: auto;
+                bottom: 10px;
+                transform: none;
+            }
+            .gallery-thumbnails {
+                max-height: 60px;
+            }
+            .gallery-thumbnail {
+                width: 60px;
+                height: 45px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .main-content {
+                padding: 15px;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+            .about-text,
+            .contact-text {
+                padding: 15px;
+                font-size: 16px;
+            }
+            .price-card {
+                padding: 20px;
+            }
+            .price {
+                font-size: 28px;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            .platform-card {
+                padding: 20px 15px;
+            }
+            .platform-name {
+                font-size: 20px;
+            }
+            .platform-desc {
+                font-size: 14px;
+            }
+            .footer {
+                padding: 20px 10px;
+            }
+            .social-links {
+                gap: 15px;
+            }
+            .social-link {
+                width: 40px;
+                height: 40px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar -->
         <div class="sidebar">
-            <!-- Hamburger Menu Icon moved here and above the logo -->
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i> Menu
-            </button>
             <div class="logo-container">
                 <img src="https://i.postimg.cc/bYVWfsDV/image-2025-07-24-001942723.png" alt="Fimigon Logo" class="logo">
                 <div class="logo-text">Fimigon</div>
             </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li class="nav-item">
                     <a href="#" class="nav-link" data-section="info">
-                        <i class="fas fa-info-circle"></i> Info
+                        <i class="fas fa-info-circle"></i> <span>Info</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link" data-section="prices"> <!-- Removed active class -->
-                        <i class="fas fa-tags"></i> Prices
+                    <a href="#" class="nav-link active" data-section="prices">
+                        <i class="fas fa-tags"></i> <span>Prices</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link" data-section="projects">
-                        <i class="fas fa-project-diagram"></i> Projects
+                        <i class="fas fa-project-diagram"></i> <span>Projects</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link" data-section="contact">
-                        <i class="fas fa-envelope"></i> Contact
+                        <i class="fas fa-envelope"></i> <span>Contact</span>
                     </a>
                 </li>
             </ul>
         </div>
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Prices Section -->
-            <section id="prices" class="section"> <!-- Removed active class -->
+        <div class="main-content" id="mainContent">
+            <section id="prices" class="section active">
                 <h2 class="section-title">Pricing Plans</h2>
                 <div class="price-cards">
                     <div class="price-card">
@@ -740,8 +878,7 @@
                     </div>
                 </div>
             </section>
-            <!-- Info Section -->
-            <section id="info" class="section active"> <!-- Added active class here -->
+            <section id="info" class="section">
                 <h2 class="section-title">About Me</h2>
                 <div class="info-content">
                     <div class="about-text">
@@ -879,7 +1016,6 @@
                     </div>
                 </div>
             </section>
-            <!-- Projects Section -->
             <section id="projects" class="section">
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="projects-grid">
@@ -893,7 +1029,6 @@
                     </div>
                 </div>
             </section>
-            <!-- Contact Section -->
             <section id="contact" class="section">
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="contact-content">
@@ -928,7 +1063,6 @@
                     </div>
                 </div>
             </section>
-            <!-- Footer -->
             <div class="footer">
                 <div class="social-links">
                     <a href="https://discord.gg/x9FqWwbH" target="_blank" class="social-link" style="background-image: url('https://i.postimg.cc/yY9Mh7xf/image-2025-07-24-002142993.png');"></a>
@@ -941,7 +1075,6 @@
             </div>
         </div>
     </div>
-    <!-- Video Modal -->
     <div id="videoModal" class="modal">
         <div class="modal-content">
             <button class="close-modal">×</button>
@@ -950,7 +1083,6 @@
             </video>
         </div>
     </div>
-    <!-- Image Gallery Modal -->
     <div id="imageGalleryModal" class="image-gallery-modal">
         <div class="image-gallery-content">
             <button class="close-gallery">×</button>
@@ -966,16 +1098,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
             const sections = document.querySelectorAll('.section');
-            // Removed the lines that incorrectly forced 'info' active on load,
-            // as the HTML now correctly sets the 'active' class.
-            // The initial state is now controlled by the HTML structure.
-
+            const menuToggle = document.getElementById('menuToggle');
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.getElementById('mainContent');
             const orderButtons = document.querySelectorAll('.order-btn');
             const contactButtons = document.querySelectorAll('.contact-btn');
             const videoModal = document.getElementById('videoModal');
             const modalVideo = document.getElementById('modalVideo');
             const closeModal = document.querySelector('.close-modal');
-            // Image Gallery Modal Elements
             const imageGalleryModal = document.getElementById('imageGalleryModal');
             const galleryMainImage = document.getElementById('galleryMainImage');
             const galleryThumbnails = document.getElementById('galleryThumbnails');
@@ -984,7 +1114,10 @@
             const nextImageBtn = document.getElementById('nextImage');
             let currentImages = [];
             let currentIndex = 0;
-            // Navigation links
+
+            document.querySelector('.nav-link[data-section="info"]').classList.add('active');
+            document.getElementById('info').classList.add('active');
+
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -993,15 +1126,30 @@
                     this.classList.add('active');
                     const sectionId = this.getAttribute('data-section');
                     document.getElementById(sectionId).classList.add('active');
+
+                    if (window.innerWidth <= 768) {
+                        sidebar.classList.remove('active');
+                        mainContent.classList.remove('sidebar-active');
+                    }
                 });
             });
-            // "Order Now" and "Contact Me" buttons redirect to the contact page
+
+            menuToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+                mainContent.classList.toggle('sidebar-active');
+            });
+
             function showContactPage(e) {
                 e.preventDefault();
                 navLinks.forEach(l => l.classList.remove('active'));
                 sections.forEach(s => s.classList.remove('active'));
                 document.querySelector('.nav-link[data-section="contact"]').classList.add('active');
                 document.getElementById('contact').classList.add('active');
+
+                 if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('active');
+                    mainContent.classList.remove('sidebar-active');
+                }
             }
             orderButtons.forEach(button => {
                 button.addEventListener('click', showContactPage);
@@ -1009,7 +1157,7 @@
             contactButtons.forEach(button => {
                 button.addEventListener('click', showContactPage);
             });
-            // Video play functionality
+
             const mediaVideos = document.querySelectorAll('.media-video');
             mediaVideos.forEach(video => {
                 video.addEventListener('click', function() {
@@ -1021,7 +1169,7 @@
                     }, 100);
                 });
             });
-            // Close video modal
+
             function hideVideoModal() {
                 videoModal.style.display = 'none';
                 modalVideo.pause();
@@ -1033,7 +1181,7 @@
                     hideVideoModal();
                 }
             });
-            // Image Gallery Functionality
+
             const mediaItemsWithImages = document.querySelectorAll('.media-item[data-images]');
             mediaItemsWithImages.forEach(item => {
                 item.addEventListener('click', function() {
@@ -1046,15 +1194,17 @@
                             imageGalleryModal.style.display = 'flex';
                         }
                     } catch (error) {
-                        console.error("Failed to parse image data:", error);
+                        console.error("Failed to parse image ", error);
                     }
                 });
             });
+
             function updateGalleryView() {
                 if (currentImages.length === 0) return;
                 galleryMainImage.src = currentImages[currentIndex];
                 createThumbnails();
             }
+
             function createThumbnails() {
                 galleryThumbnails.innerHTML = '';
                 currentImages.forEach((img, index) => {
@@ -1071,15 +1221,17 @@
                     galleryThumbnails.appendChild(thumb);
                 });
             }
+
             prevImageBtn.addEventListener('click', function() {
                 currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
                 updateGalleryView();
             });
+
             nextImageBtn.addEventListener('click', function() {
                 currentIndex = (currentIndex + 1) % currentImages.length;
                 updateGalleryView();
             });
-            // Close image gallery
+
             function hideImageGallery() {
                 imageGalleryModal.style.display = 'none';
             }
@@ -1089,7 +1241,7 @@
                     hideImageGallery();
                 }
             });
-            // Keyboard navigation (Escape key and arrows)
+
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     if (videoModal.style.display === 'flex') {
@@ -1097,6 +1249,10 @@
                     }
                     if (imageGalleryModal.style.display === 'flex') {
                         hideImageGallery();
+                    }
+                     if (window.innerWidth <= 768 && sidebar.classList.contains('active')) {
+                        sidebar.classList.remove('active');
+                        mainContent.classList.remove('sidebar-active');
                     }
                 } else if (imageGalleryModal.style.display === 'flex') {
                     if (e.key === 'ArrowLeft') {
@@ -1108,7 +1264,15 @@
                     }
                 }
             });
+
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768 && sidebar.classList.contains('active') && !sidebar.contains(e.target) && e.target !== menuToggle) {
+                    sidebar.classList.remove('active');
+                    mainContent.classList.remove('sidebar-active');
+                }
+            });
         });
     </script>
 </body>
 </html>
+```
