@@ -180,6 +180,37 @@
                 border-radius: 2px;
             }
 
+            .quick-nav {
+                display: flex;
+                justify-content: center;
+                gap: 25px;
+                flex-wrap: wrap;
+                max-width: 850px;
+                margin: 0 auto 20px;
+            }
+            .quick-nav-btn {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 18px 40px;
+                background: linear-gradient(45deg, #8a2be2, #4a00e0);
+                color: #ffffff;
+                border-radius: 30px;
+                font-size: 19px;
+                font-weight: 600;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 20px rgba(138, 43, 226, 0.45);
+                border: 1px solid rgba(138, 43, 226, 0.6);
+            }
+            .quick-nav-btn i {
+                font-size: 20px;
+            }
+            .quick-nav-btn:hover {
+                transform: translateY(-4px) scale(1.05);
+                box-shadow: 0 0 30px rgba(138, 43, 226, 0.8);
+            }
+
             .price-cards {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -734,6 +765,16 @@
                     font-size: 28px;
                 }
 
+                .quick-nav {
+                    gap: 15px;
+                }
+                .quick-nav-btn {
+                    padding: 14px 28px;
+                    font-size: 16px;
+                    width: 100%;
+                    justify-content: center;
+                }
+
                 .sidebar.active {
                     width: 300px;
                     overflow: visible;
@@ -947,6 +988,20 @@
                                 it’s a simple script or a full game overhaul.
                             </p>
                         </div>
+                        <div class="quick-nav">
+                            <a href="#" class="quick-nav-btn" id="showcaseBtn">
+                                <i class="fas fa-photo-film"></i> Showcases
+                            </a>
+                            <a href="#" class="quick-nav-btn" data-section="projects">
+                                <i class="fas fa-project-diagram"></i> View My Projects
+                            </a>
+                            <a href="#" class="quick-nav-btn" data-section="prices">
+                                <i class="fas fa-tags"></i> See Pricing
+                            </a>
+                            <a href="#" class="quick-nav-btn" data-section="contact">
+                                <i class="fas fa-envelope"></i> Contact Me
+                            </a>
+                        </div>
                         <h3 class="subsection-title">My Expertise</h3>
                         <div class="skills">
                             <div class="skill-tag">API Integration</div>
@@ -961,315 +1016,315 @@
                             <div class="skill-tag">Frameworks (Knit)</div>
                             <div class="skill-tag">Rojo</div>
                         </div>
-                        <h3 class="subsection-title">My Work Showcase</h3>
-                        <div class="media-gallery">
-                        <div class="media-grid">
-                            <div class="media-item">
-                                <div
-                                    class="media-video"
-                                    data-video="https://file.garden/aIHWGUKjWXYbh6fv/2025-07-23%2023-35-06.mp4"
-                                    data-thumbnail="https://i.postimg.cc/DfgFJqjC/image-2025-07-24-012121495.png"
-                                >
+                        <h3 class="subsection-title" id="workShowcase">My Work Showcase</h3>
+<div class="media-gallery">
+                            <div class="media-grid">
+                                <div class="media-item">
                                     <div
-                                        class="video-thumbnail"
-                                        style="background-image: url(&quot;https://i.postimg.cc/DfgFJqjC/image-2025-07-24-012121495.png&quot;);"
+                                        class="media-video"
+                                        data-video="https://file.garden/aIHWGUKjWXYbh6fv/2025-07-23%2023-35-06.mp4"
+                                        data-thumbnail="https://i.postimg.cc/DfgFJqjC/image-2025-07-24-012121495.png"
                                     >
-                                        <div class="video-overlay"></div>
-                                        <div class="play-button">
-                                            <i class="fas fa-play"></i>
+                                        <div
+                                            class="video-thumbnail"
+                                            style="background-image: url(&quot;https://i.postimg.cc/DfgFJqjC/image-2025-07-24-012121495.png&quot;);"
+                                        >
+                                            <div class="video-overlay"></div>
+                                            <div class="play-button">
+                                                <i class="fas fa-play"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Advanced Building System</h4>
-                                    <p class="media-desc">
-                                        Custom building mechanics with grid snapping, rotation, and smooth camera.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="media-item">
-                                <div
-                                    class="media-video"
-                                    data-video="https://file.garden/aiD-KnaSGigyN212/2026-06-03%2023-50-39.mp4"
-                                    data-thumbnail="https://file.garden/aiD-KnaSGigyN212/image1.png"
-                                >
-                                    <div
-                                        class="video-thumbnail"
-                                        style="background-image: url(&quot;https://file.garden/aiD-KnaSGigyN212/image1.png&quot;);"
-                                    >
-                                        <div class="video-overlay"></div>
-                                        <div class="play-button">
-                                            <i class="fas fa-play"></i>
-                                        </div>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Advanced Building System</h4>
+                                        <p class="media-desc">
+                                            Custom building mechanics with grid snapping, rotation, and smooth camera.
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Advanced NPC System</h4>
-                                    <p class="media-desc">
-                                        A highly optimized NPC system that easily handles thousands of animated
-                                        NPCs at once. This example shows 2,000 NPCs following the player
-                                        simultaneously.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="media-item">
-                                <div
-                                    class="media-video"
-                                    data-video="https://file.garden/aiD-KnaSGigyN212/2026-06-06%2006-50-12.mp4"
-                                    data-thumbnail="https://file.garden/aiD-KnaSGigyN212/imag3e.png"
-                                >
+                                <div class="media-item">
                                     <div
-                                        class="video-thumbnail"
-                                        style="background-image: url(&quot;https://file.garden/aiD-KnaSGigyN212/imag3e.png&quot;);"
+                                        class="media-video"
+                                        data-video="https://file.garden/aiD-KnaSGigyN212/2026-06-03%2023-50-39.mp4"
+                                        data-thumbnail="https://file.garden/aiD-KnaSGigyN212/image1.png"
                                     >
-                                        <div class="video-overlay"></div>
-                                        <div class="play-button">
-                                            <i class="fas fa-play"></i>
+                                        <div
+                                            class="video-thumbnail"
+                                            style="background-image: url(&quot;https://file.garden/aiD-KnaSGigyN212/image1.png&quot;);"
+                                        >
+                                            <div class="video-overlay"></div>
+                                            <div class="play-button">
+                                                <i class="fas fa-play"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Advanced Dialogue System</h4>
-                                    <p class="media-desc">
-                                        A fully configurable dialogue system with branching choices, a 3D NPC
-                                        viewport, typewriter text with pauses and sounds, interaction prompts,
-                                        and tons of customizable options for any kind of conversation.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="media-item">
-                                <div
-                                    class="media-video"
-                                    data-video="https://file.garden/aiD-KnaSGigyN212/2026-06-03%2023-23-21.mp4"
-                                    data-thumbnail="https://file.garden/aiD-KnaSGigyN212/image.png"
-                                >
-                                    <div
-                                        class="video-thumbnail"
-                                        style="background-image: url(&quot;https://file.garden/aiD-KnaSGigyN212/image.png&quot;);"
-                                    >
-                                        <div class="video-overlay"></div>
-                                        <div class="play-button">
-                                            <i class="fas fa-play"></i>
-                                        </div>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Advanced NPC System</h4>
+                                        <p class="media-desc">
+                                            A highly optimized NPC system that easily handles thousands of animated
+                                            NPCs at once. This example shows 2,000 NPCs following the player
+                                            simultaneously.
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Lucky Block Fishing System</h4>
-                                    <p class="media-desc">
-                                        A fully polished fishing system that lets players fish up and open Lucky
-                                        Blocks, complete with music and sound effects.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="media-item">
-                                <div
-                                    class="media-video"
-                                    data-video="https://file.garden/aiD-KnaSGigyN212/2026-06-06%2006-14-36.mp4"
-                                    data-thumbnail="https://file.garden/aiD-KnaSGigyN212/image2.png"
-                                >
+                                <div class="media-item">
                                     <div
-                                        class="video-thumbnail"
-                                        style="background-image: url(&quot;https://file.garden/aiD-KnaSGigyN212/image2.png&quot;);"
+                                        class="media-video"
+                                        data-video="https://file.garden/aiD-KnaSGigyN212/2026-06-06%2006-50-12.mp4"
+                                        data-thumbnail="https://file.garden/aiD-KnaSGigyN212/imag3e.png"
                                     >
-                                        <div class="video-overlay"></div>
-                                        <div class="play-button">
-                                            <i class="fas fa-play"></i>
+                                        <div
+                                            class="video-thumbnail"
+                                            style="background-image: url(&quot;https://file.garden/aiD-KnaSGigyN212/imag3e.png&quot;);"
+                                        >
+                                            <div class="video-overlay"></div>
+                                            <div class="play-button">
+                                                <i class="fas fa-play"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Time Manipulation System</h4>
-                                    <p class="media-desc">
-                                        A time control system that lets players freeze the world and rewind it in
-                                        real time, recording and replaying object states with smooth, accurate
-                                        playback.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="media-item">
-                                <div
-                                    class="media-video"
-                                    data-video="https://file.garden/aIHWGUKjWXYbh6fv/2025-07-23%2023-41-59.mp4"
-                                    data-thumbnail="https://i.postimg.cc/XJtgQ384/image-2025-07-24-134944849.png"
-                                >
-                                    <div
-                                        class="video-thumbnail"
-                                        style="background-image: url(&quot;https://i.postimg.cc/XJtgQ384/image-2025-07-24-134944849.png&quot;);"
-                                    >
-                                        <div class="video-overlay"></div>
-                                        <div class="play-button">
-                                            <i class="fas fa-play"></i>
-                                        </div>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Advanced Dialogue System</h4>
+                                        <p class="media-desc">
+                                            A fully configurable dialogue system with branching choices, a 3D NPC
+                                            viewport, typewriter text with pauses and sounds, interaction prompts,
+                                            and tons of customizable options for any kind of conversation.
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Round System</h4>
-                                    <p class="media-desc">
-                                        A modular round system featuring support for custom maps, multiple game
-                                        modes, dynamic events, and easily expandable functionality.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="media-item">
-                                <div
-                                    class="media-video"
-                                    data-video="https://file.garden/aIHWGUKjWXYbh6fv/2025-07-23%2023-53-34.mp4"
-                                    data-thumbnail="https://i.postimg.cc/J0dpwZMV/image-2025-07-24-134523117.png"
-                                >
+                                <div class="media-item">
                                     <div
-                                        class="video-thumbnail"
-                                        style="background-image: url(&quot;https://i.postimg.cc/J0dpwZMV/image-2025-07-24-134523117.png&quot;);"
+                                        class="media-video"
+                                        data-video="https://file.garden/aiD-KnaSGigyN212/2026-06-03%2023-23-21.mp4"
+                                        data-thumbnail="https://file.garden/aiD-KnaSGigyN212/image.png"
                                     >
-                                        <div class="video-overlay"></div>
-                                        <div class="play-button">
-                                            <i class="fas fa-play"></i>
+                                        <div
+                                            class="video-thumbnail"
+                                            style="background-image: url(&quot;https://file.garden/aiD-KnaSGigyN212/image.png&quot;);"
+                                        >
+                                            <div class="video-overlay"></div>
+                                            <div class="play-button">
+                                                <i class="fas fa-play"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Hexagon Map Generator</h4>
-                                    <p class="media-desc">
-                                        A hexagon map generator that features a Seed Generator, a Customizable
-                                        Generation system, and Interactable Tiles.
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                class="media-item"
-                                data-images='["https://i.postimg.cc/mrcwHfYb/image-2025-07-24-014834562.png", "https://i.postimg.cc/sxc4ySzD/image-2025-07-24-140142797.png", "https://i.postimg.cc/MGvPDsS0/image-2025-07-24-140049410.png"]'
-                            >
-                                <div
-                                    class="media-image"
-                                    style="background-image: url(&quot;https://i.postimg.cc/mrcwHfYb/image-2025-07-24-014834562.png&quot;);"
-                                ></div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Biome/Mountain Terrain Generation</h4>
-                                    <p class="media-desc">
-                                        Customizable smooth mountain generation, can be made into a volcano,
-                                        geyser, etc.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="media-item">
-                                <div
-                                    class="media-video"
-                                    data-video="https://file.garden/aIHWGUKjWXYbh6fv/2025-01-01%2021-27-54.mp4"
-                                    data-thumbnail="https://i.postimg.cc/ry0dk58h/image-2025-07-24-140524317.png"
-                                >
-                                    <div
-                                        class="video-thumbnail"
-                                        style="background-image: url(&quot;https://i.postimg.cc/ry0dk58h/image-2025-07-24-140524317.png&quot;);"
-                                    >
-                                        <div class="video-overlay"></div>
-                                        <div class="play-button">
-                                            <i class="fas fa-play"></i>
-                                        </div>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Lucky Block Fishing System</h4>
+                                        <p class="media-desc">
+                                            A fully polished fishing system that lets players fish up and open Lucky
+                                            Blocks, complete with music and sound effects.
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Client/Server Body Movement</h4>
-                                    <p class="media-desc">
-                                        A synchronized client/server body movement system that ensures smooth
-                                        character animation, accurate positioning, and responsive control across
-                                        all devices.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="media-item">
-                                <div
-                                    class="media-video"
-                                    data-video="https://file.garden/aIHWGUKjWXYbh6fv/2025-07-23%2023-52-02.mp4"
-                                    data-thumbnail="https://i.postimg.cc/c4fVt17R/image-2025-07-24-141815302.png"
-                                >
+                                <div class="media-item">
                                     <div
-                                        class="video-thumbnail"
-                                        style="background-image: url(&quot;https://i.postimg.cc/c4fVt17R/image-2025-07-24-141815302.png&quot;);"
+                                        class="media-video"
+                                        data-video="https://file.garden/aiD-KnaSGigyN212/2026-06-06%2006-14-36.mp4"
+                                        data-thumbnail="https://file.garden/aiD-KnaSGigyN212/image2.png"
                                     >
-                                        <div class="video-overlay"></div>
-                                        <div class="play-button">
-                                            <i class="fas fa-play"></i>
+                                        <div
+                                            class="video-thumbnail"
+                                            style="background-image: url(&quot;https://file.garden/aiD-KnaSGigyN212/image2.png&quot;);"
+                                        >
+                                            <div class="video-overlay"></div>
+                                            <div class="play-button">
+                                                <i class="fas fa-play"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Player Awareness System</h4>
-                                    <p class="media-desc">
-                                        A visual tracking system that enhances player visibility with an animated
-                                        proximity ring and a responsive offscreen profile indicator that scales
-                                        based on distance, keeping teammates or targets easy to locate at all times.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="media-item">
-                                <div
-                                    class="media-video"
-                                    data-video="https://file.garden/aIHWGUKjWXYbh6fv/2025-07-23%2023-56-47.mp4"
-                                    data-thumbnail="https://i.postimg.cc/ncLDCMf5/image-2025-07-24-141947222.png"
-                                >
-                                    <div
-                                        class="video-thumbnail"
-                                        style="background-image: url(&quot;https://i.postimg.cc/ncLDCMf5/image-2025-07-24-141947222.png&quot;);"
-                                    >
-                                        <div class="video-overlay"></div>
-                                        <div class="play-button">
-                                            <i class="fas fa-play"></i>
-                                        </div>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Time Manipulation System</h4>
+                                        <p class="media-desc">
+                                            A time control system that lets players freeze the world and rewind it in
+                                            real time, recording and replaying object states with smooth, accurate
+                                            playback.
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Tycoon System</h4>
-                                    <p class="media-desc">
-                                        A flexible tycoon system that supports fully customizable mechanics,
-                                        featuring NPCs that automatically display as your friends, interactive
-                                        income generators, and seamless expansion for game specific upgrades and
-                                        currencies.
-                                    </p>
+                                <div class="media-item">
+                                    <div
+                                        class="media-video"
+                                        data-video="https://file.garden/aIHWGUKjWXYbh6fv/2025-07-23%2023-41-59.mp4"
+                                        data-thumbnail="https://i.postimg.cc/XJtgQ384/image-2025-07-24-134944849.png"
+                                    >
+                                        <div
+                                            class="video-thumbnail"
+                                            style="background-image: url(&quot;https://i.postimg.cc/XJtgQ384/image-2025-07-24-134944849.png&quot;);"
+                                        >
+                                            <div class="video-overlay"></div>
+                                            <div class="play-button">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Round System</h4>
+                                        <p class="media-desc">
+                                            A modular round system featuring support for custom maps, multiple game
+                                            modes, dynamic events, and easily expandable functionality.
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div
-                                class="media-item"
-                                data-images='["https://i.postimg.cc/VvqmNfZN/image-2025-07-24-140635266.png", "https://i.postimg.cc/fRTDwhcw/image-2025-07-24-140657036.png", "https://i.postimg.cc/90YHhxzR/image-2025-07-24-140724980.png"]'
-                            >
-                                <div
-                                    class="media-image"
-                                    style="background-image: url(&quot;https://i.postimg.cc/VvqmNfZN/image-2025-07-24-140635266.png&quot;);"
-                                ></div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Quests/Missions</h4>
-                                    <p class="media-desc">Fully customizable GUI and Quests, with saving.</p>
+                                <div class="media-item">
+                                    <div
+                                        class="media-video"
+                                        data-video="https://file.garden/aIHWGUKjWXYbh6fv/2025-07-23%2023-53-34.mp4"
+                                        data-thumbnail="https://i.postimg.cc/J0dpwZMV/image-2025-07-24-134523117.png"
+                                    >
+                                        <div
+                                            class="video-thumbnail"
+                                            style="background-image: url(&quot;https://i.postimg.cc/J0dpwZMV/image-2025-07-24-134523117.png&quot;);"
+                                        >
+                                            <div class="video-overlay"></div>
+                                            <div class="play-button">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Hexagon Map Generator</h4>
+                                        <p class="media-desc">
+                                            A hexagon map generator that features a Seed Generator, a Customizable
+                                            Generation system, and Interactable Tiles.
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div
-                                class="media-item"
-                                data-images='["https://i.postimg.cc/3Nm21c9q/image-2025-07-24-141334381.png", "https://i.postimg.cc/7Lh7d6m0/image-2025-07-24-141401555.png"]'
-                            >
                                 <div
-                                    class="media-image"
-                                    style="background-image: url(&quot;https://i.postimg.cc/3Nm21c9q/image-2025-07-24-141334381.png&quot;);"
-                                ></div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Skill Tree</h4>
-                                    <p class="media-desc">Fully customizable GUI and Quests, with saving.</p>
+                                    class="media-item"
+                                    data-images='["https://i.postimg.cc/mrcwHfYb/image-2025-07-24-014834562.png", "https://i.postimg.cc/sxc4ySzD/image-2025-07-24-140142797.png", "https://i.postimg.cc/MGvPDsS0/image-2025-07-24-140049410.png"]'
+                                >
+                                    <div
+                                        class="media-image"
+                                        style="background-image: url(&quot;https://i.postimg.cc/mrcwHfYb/image-2025-07-24-014834562.png&quot;);"
+                                    ></div>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Biome/Mountain Terrain Generation</h4>
+                                        <p class="media-desc">
+                                            Customizable smooth mountain generation, can be made into a volcano,
+                                            geyser, etc.
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div
-                                class="media-item"
-                                data-images='["https://i.postimg.cc/PJZH3mgJ/image-2025-07-24-143915195.png", "https://i.postimg.cc/QMt3GL2R/image-2025-07-24-143958385.png"]'
-                            >
+                                <div class="media-item">
+                                    <div
+                                        class="media-video"
+                                        data-video="https://file.garden/aIHWGUKjWXYbh6fv/2025-01-01%2021-27-54.mp4"
+                                        data-thumbnail="https://i.postimg.cc/ry0dk58h/image-2025-07-24-140524317.png"
+                                    >
+                                        <div
+                                            class="video-thumbnail"
+                                            style="background-image: url(&quot;https://i.postimg.cc/ry0dk58h/image-2025-07-24-140524317.png&quot;);"
+                                        >
+                                            <div class="video-overlay"></div>
+                                            <div class="play-button">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Client/Server Body Movement</h4>
+                                        <p class="media-desc">
+                                            A synchronized client/server body movement system that ensures smooth
+                                            character animation, accurate positioning, and responsive control across
+                                            all devices.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media-item">
+                                    <div
+                                        class="media-video"
+                                        data-video="https://file.garden/aIHWGUKjWXYbh6fv/2025-07-23%2023-52-02.mp4"
+                                        data-thumbnail="https://i.postimg.cc/c4fVt17R/image-2025-07-24-141815302.png"
+                                    >
+                                        <div
+                                            class="video-thumbnail"
+                                            style="background-image: url(&quot;https://i.postimg.cc/c4fVt17R/image-2025-07-24-141815302.png&quot;);"
+                                        >
+                                            <div class="video-overlay"></div>
+                                            <div class="play-button">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Player Awareness System</h4>
+                                        <p class="media-desc">
+                                            A visual tracking system that enhances player visibility with an animated
+                                            proximity ring and a responsive offscreen profile indicator that scales
+                                            based on distance, keeping teammates or targets easy to locate at all times.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media-item">
+                                    <div
+                                        class="media-video"
+                                        data-video="https://file.garden/aIHWGUKjWXYbh6fv/2025-07-23%2023-56-47.mp4"
+                                        data-thumbnail="https://i.postimg.cc/ncLDCMf5/image-2025-07-24-141947222.png"
+                                    >
+                                        <div
+                                            class="video-thumbnail"
+                                            style="background-image: url(&quot;https://i.postimg.cc/ncLDCMf5/image-2025-07-24-141947222.png&quot;);"
+                                        >
+                                            <div class="video-overlay"></div>
+                                            <div class="play-button">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Tycoon System</h4>
+                                        <p class="media-desc">
+                                            A flexible tycoon system that supports fully customizable mechanics,
+                                            featuring NPCs that automatically display as your friends, interactive
+                                            income generators, and seamless expansion for game specific upgrades and
+                                            currencies.
+                                        </p>
+                                    </div>
+                                </div>
                                 <div
-                                    class="media-image"
-                                    style="background-image: url(&quot;https://i.postimg.cc/QMt3GL2R/image-2025-07-24-143958385.png&quot;);"
-                                ></div>
-                                <div class="media-info">
-                                    <h4 class="media-title">Rewards and Inventory Shop</h4>
-                                    <p class="media-desc">
-                                        A shop and inventory system that supports item rewards, currency purchases,
-                                        and inventory management.
-                                    </p>
+                                    class="media-item"
+                                    data-images='["https://i.postimg.cc/VvqmNfZN/image-2025-07-24-140635266.png", "https://i.postimg.cc/fRTDwhcw/image-2025-07-24-140657036.png", "https://i.postimg.cc/90YHhxzR/image-2025-07-24-140724980.png"]'
+                                >
+                                    <div
+                                        class="media-image"
+                                        style="background-image: url(&quot;https://i.postimg.cc/VvqmNfZN/image-2025-07-24-140635266.png&quot;);"
+                                    ></div>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Quests/Missions</h4>
+                                        <p class="media-desc">Fully customizable GUI and Quests, with saving.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="media-item"
+                                    data-images='["https://i.postimg.cc/3Nm21c9q/image-2025-07-24-141334381.png", "https://i.postimg.cc/7Lh7d6m0/image-2025-07-24-141401555.png"]'
+                                >
+                                    <div
+                                        class="media-image"
+                                        style="background-image: url(&quot;https://i.postimg.cc/3Nm21c9q/image-2025-07-24-141334381.png&quot;);"
+                                    ></div>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Skill Tree</h4>
+                                        <p class="media-desc">Fully customizable GUI and Quests, with saving.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="media-item"
+                                    data-images='["https://i.postimg.cc/PJZH3mgJ/image-2025-07-24-143915195.png", "https://i.postimg.cc/QMt3GL2R/image-2025-07-24-143958385.png"]'
+                                >
+                                    <div
+                                        class="media-image"
+                                        style="background-image: url(&quot;https://i.postimg.cc/QMt3GL2R/image-2025-07-24-143958385.png&quot;);"
+                                    ></div>
+                                    <div class="media-info">
+                                        <h4 class="media-title">Rewards and Inventory Shop</h4>
+                                        <p class="media-desc">
+                                            A shop and inventory system that supports item rewards, currency purchases,
+                                            and inventory management.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </section>
                 <section id="projects" class="section">
                     <h2 class="section-title">Featured Projects</h2>
@@ -1501,6 +1556,7 @@
                 const menuToggle = document.getElementById("menuToggle");
                 const sidebar = document.querySelector(".sidebar");
                 const mainContent = document.getElementById("mainContent");
+                const quickNavButtons = document.querySelectorAll(".quick-nav-btn");
                 const orderButtons = document.querySelectorAll(".order-btn");
                 const contactButtons = document.querySelectorAll(".contact-btn");
                 const videoModal = document.getElementById("videoModal");
@@ -1518,21 +1574,51 @@
                 document.querySelector('.nav-link[data-section="info"]').classList.add("active");
                 document.getElementById("info").classList.add("active");
 
+                function switchSection(sectionId) {
+                    navLinks.forEach((l) => l.classList.remove("active"));
+                    sections.forEach((s) => s.classList.remove("active"));
+                    const targetLink = document.querySelector('.nav-link[data-section="' + sectionId + '"]');
+                    if (targetLink) {
+                        targetLink.classList.add("active");
+                    }
+                    document.getElementById(sectionId).classList.add("active");
+                    window.scrollTo(0, 0);
+                    mainContent.scrollTop = 0;
+
+                    if (window.innerWidth <= 768) {
+                        sidebar.classList.remove("active");
+                        mainContent.classList.remove("sidebar-active");
+                    }
+                }
+
                 navLinks.forEach((link) => {
                     link.addEventListener("click", function (e) {
                         e.preventDefault();
-                        navLinks.forEach((l) => l.classList.remove("active"));
-                        sections.forEach((s) => s.classList.remove("active"));
-                        this.classList.add("active");
-                        const sectionId = this.getAttribute("data-section");
-                        document.getElementById(sectionId).classList.add("active");
+                        switchSection(this.getAttribute("data-section"));
+                    });
+                });
 
-                        if (window.innerWidth <= 768) {
-                            sidebar.classList.remove("active");
-                            mainContent.classList.remove("sidebar-active");
+                quickNavButtons.forEach((button) => {
+                    button.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const sectionId = this.getAttribute("data-section");
+                        if (sectionId) {
+                            switchSection(sectionId);
                         }
                     });
                 });
+
+                const showcaseBtn = document.getElementById("showcaseBtn");
+                if (showcaseBtn) {
+                    showcaseBtn.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        switchSection("info");
+                        const showcase = document.getElementById("workShowcase");
+                        if (showcase) {
+                            showcase.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }
+                    });
+                }
 
                 menuToggle.addEventListener("click", function () {
                     sidebar.classList.toggle("active");
@@ -1541,15 +1627,7 @@
 
                 function showContactPage(e) {
                     e.preventDefault();
-                    navLinks.forEach((l) => l.classList.remove("active"));
-                    sections.forEach((s) => s.classList.remove("active"));
-                    document.querySelector('.nav-link[data-section="contact"]').classList.add("active");
-                    document.getElementById("contact").classList.add("active");
-
-                    if (window.innerWidth <= 768) {
-                        sidebar.classList.remove("active");
-                        mainContent.classList.remove("sidebar-active");
-                    }
+                    switchSection("contact");
                 }
                 orderButtons.forEach((button) => {
                     button.addEventListener("click", showContactPage);
