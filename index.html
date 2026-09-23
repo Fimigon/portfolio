@@ -24,7 +24,7 @@
       />
       <link
          rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       />
       <script>
          try {
@@ -761,6 +761,7 @@
          .mrow {
             display: flex;
             gap: 12px;
+            padding-right: 12px;
             width: max-content;
             animation: slide 48s linear infinite;
          }
@@ -1800,12 +1801,21 @@
                         using OOP.
                      </p>
                      <p>
+                        I also work as a <strong>project manager</strong>,
+                        planning features, coordinating the team and keeping
+                        updates shipping on schedule.
+                     </p>
+                     <p>
                         Whether it's a single script or a full game overhaul,
                         you get readable, high-quality code built around what
                         your game actually needs.
                      </p>
                   </div>
                   <dl class="spec reveal" style="--d: 0.1s">
+                     <div class="row">
+                        <dt>Roles</dt>
+                        <dd>Scripter, project manager</dd>
+                     </div>
                      <div class="row">
                         <dt>Experience</dt>
                         <dd>8 years</dd>
@@ -1828,7 +1838,7 @@
                      </div>
                      <div class="row">
                         <dt>Reply time</dt>
-                        <dd>Usually within 24 hours</dd>
+                        <dd>Within 24 hours</dd>
                      </div>
                   </dl>
                </div>
@@ -1843,8 +1853,8 @@
                      Games I've worked on
                   </h2>
                   <p class="sec-note reveal">
-                     Every number here is pulled from Roblox when you open this
-                     page, and player counts refresh every minute.
+                     Every number here is pulled live from Roblox when you open
+                     this page.
                   </p>
                </div>
 
@@ -2003,7 +2013,7 @@
                         target="_blank"
                         rel="noopener"
                         ><i class="fa-brands fa-discord bi i-discord"></i>
-                        <div><b>Discord</b><span>Fastest reply</span></div>
+                        <div><b>Discord</b><span>Fimigon</span></div>
                         <i class="fa-solid fa-arrow-right go"></i
                      ></a>
                      <a
@@ -2095,40 +2105,40 @@
                   placeId: 126690911414483,
                   name: "TROLL OBBY",
                   desc: "An obby where nothing is what it seems. Logic goes out the window, so don't trust anything.",
-                  roles: ["Programming"],
-                  peakCCU: null,
+                  roles: ["Scripting"],
+                  peakCCU: 15630,
                   thumb: "https://tr.rbxcdn.com/180DAY-2e912abad4d42f3d3862e0707aec0941/768/432/Image/Webp/noFilter",
                },
                {
                   placeId: 117090463954607,
                   name: "Own A Market",
                   desc: "Stock shelves, unlock products and expand floors until your corner shop becomes a supermarket.",
-                  roles: ["Programming"],
-                  peakCCU: null,
+                  roles: ["Scripting"],
+                  peakCCU: 17480,
                   thumb: "https://tr.rbxcdn.com/180DAY-85bd0e1ec7bc878d07bef5f99822198e/768/432/Image/Webp/noFilter",
                },
                {
                   placeId: 96359911955138,
                   name: "Phonk Awakening",
                   desc: "Reach gazillions of phonk and rebirth for massive multipliers on the way to phonk godhood.",
-                  roles: ["Programming"],
-                  peakCCU: null,
+                  roles: ["Scripting", "Creative Design"],
+                  peakCCU: 1250,
                   thumb: "https://tr.rbxcdn.com/180DAY-ac987b39d0928eb02127af91729e4362/768/432/Image/Webp/noFilter",
                },
                {
                   placeId: 84557950588662,
                   name: "Fish a Lucky Block",
                   desc: "Cast your rod, reel in mysterious Lucky Blocks and unlock crazy brainrots.",
-                  roles: ["Programming"],
-                  peakCCU: null,
+                  roles: ["Scripting"],
+                  peakCCU: 248,
                   thumb: "https://tr.rbxcdn.com/180DAY-7d29c1b70c7ac29ecafb79b07fc65e0b/768/432/Image/Webp/noFilter",
                },
                {
                   placeId: 80251666330006,
                   name: "Snowboard for Brainrots",
                   desc: "Snowboard to OP brainrots, avoid the void and bring them back to your base for cash.",
-                  roles: ["Programming"],
-                  peakCCU: null,
+                  roles: ["Scripting"],
+                  peakCCU: 32,
                   thumb: "https://tr.rbxcdn.com/180DAY-8d85cef1cb455d03c1ed349b56750016/768/432/Image/Webp/noFilter",
                },
             ];
@@ -2247,6 +2257,7 @@
                   "Discord Servers",
                   "Game Modding",
                   "Minecraft Plugins",
+                  "Project Management",
                   "AI Tools",
                   "Networking",
                   "UI Systems",
@@ -2646,12 +2657,38 @@
                else requestAnimationFrame(loop);
             })();
 
-            $("#marquee").innerHTML = SKILLS.map((row, i) => {
-               const tags = row
-                  .map((s) => `<span class="tag">${esc(s)}</span>`)
-                  .join("");
-               return `<div class="mrow${i % 2 ? " rev" : ""}">${tags}${tags}</div>`;
-            }).join("");
+            function buildMarquee() {
+               const box = $("#marquee");
+               const need = box.clientWidth + 80;
+               box.innerHTML = "";
+               SKILLS.forEach((list, i) => {
+                  const row = document.createElement("div");
+                  row.className = "mrow" + (i % 2 ? " rev" : "");
+                  const unit = list
+                     .map((s) => `<span class="tag">${esc(s)}</span>`)
+                     .join("");
+                  box.appendChild(row);
+                  let reps = 1;
+                  row.innerHTML = unit;
+                  while (row.scrollWidth < need && reps < 40)
+                     row.innerHTML = unit.repeat(++reps);
+                  const setWidth = row.scrollWidth;
+                  row.innerHTML = unit.repeat(reps * 2);
+                  row.style.animationDuration =
+                     setWidth / (i % 2 ? 38 : 46) + "s";
+               });
+            }
+            buildMarquee();
+            if (document.fonts && document.fonts.ready)
+               document.fonts.ready.then(buildMarquee);
+            let marqueeTimer;
+            let marqueeWidth = innerWidth;
+            addEventListener("resize", () => {
+               if (innerWidth === marqueeWidth) return;
+               marqueeWidth = innerWidth;
+               clearTimeout(marqueeTimer);
+               marqueeTimer = setTimeout(buildMarquee, 200);
+            });
 
             const games = GAMES.map((g, idx) => ({
                ...g,
@@ -2680,6 +2717,7 @@
                         up: s.up,
                         down: s.down,
                         thumbLive: s.thumbLive || null,
+                        name: s.name || g.name,
                      });
                });
             }
@@ -2759,7 +2797,7 @@
             function renderGames(animate) {
                const grid = $("#gamesGrid");
                const list = sortedGames();
-               renderedOrder = list.map((g) => g.idx).join(",");
+               renderedOrder = list.map((g) => g.idx + ":" + g.name).join("|");
                grid.innerHTML = list
                   .filter(
                      (g) =>
@@ -2952,7 +2990,7 @@
                setProp("favorites", fmtFull(t.favorites));
                setProp("games", String(games.length));
                $("#syncNote").innerHTML = lastSync
-                  ? `<i class="pulse"></i>Synced with Roblox at ${clock(lastSync)}. Player counts refresh every ${CONFIG.refreshSeconds} seconds.`
+                  ? `<i class="pulse"></i>Synced with Roblox at ${clock(lastSync)}.`
                   : snapshot && snapshot.at
                     ? `Showing the last saved numbers from ${new Date(snapshot.at).toLocaleString()} while Roblox responds.`
                     : "Fetching numbers from Roblox…";
@@ -2960,8 +2998,8 @@
 
             function updateAll() {
                const order = sortedGames()
-                  .map((g) => g.idx)
-                  .join(",");
+                  .map((g) => g.idx + ":" + g.name)
+                  .join("|");
                if (order !== renderedOrder) renderGames(false);
                else updateGames();
                renderContrib();
@@ -3099,6 +3137,7 @@
                         visits: d.visits,
                         playing: d.playing,
                         favorites: d.favoritedCount,
+                        name: d.name ? d.name.trim() : g.name,
                      });
                });
                if (votes && votes.data)
@@ -3149,6 +3188,7 @@
                         up: g.up,
                         down: g.down,
                         thumbLive: g.thumbLive,
+                        name: g.name,
                      }),
                );
                store.set("fim:snapshot", out);
@@ -3179,7 +3219,7 @@
                   log(
                      snapshot
                         ? "Roblox didn't respond, showing the last saved numbers"
-                        : `Roblox didn't respond, trying again in ${CONFIG.refreshSeconds}s`,
+                        : "Roblox didn't respond, trying again shortly",
                      "err",
                   );
                   setStatus("offline", false);
