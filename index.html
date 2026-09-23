@@ -352,10 +352,6 @@
          }
          .hero-title .num {
             font-variant-numeric: tabular-nums;
-            transition: opacity 0.35s var(--ease);
-         }
-         .hero-title .num.swap {
-            opacity: 0;
          }
          .lede {
             font-size: clamp(17px, 1.6vw, 20px);
@@ -1719,7 +1715,7 @@
                   <h1 class="hero-title">
                      I write the code behind
                      <span class="line2"
-                        ><span class="num" id="heroVisits">100M+</span>
+                        ><span class="num" id="heroVisits">0</span>
                         visits.</span
                      >
                   </h1>
@@ -2991,21 +2987,8 @@
                $("#tGames").textContent = `Across ${games.length} games`;
                $("#livePill").textContent =
                   t.playing != null ? fmtFull(t.playing) : "…";
-               if (t.visits != null) {
-                  const hv = $("#heroVisits"),
-                     text = fmtCompact(t.visits);
-                  hv.title = fmtFull(t.visits) + " visits";
-                  if (hv.textContent !== text) {
-                     if (reduceMotion) hv.textContent = text;
-                     else {
-                        hv.classList.add("swap");
-                        setTimeout(() => {
-                           hv.textContent = text;
-                           hv.classList.remove("swap");
-                        }, 350);
-                     }
-                  }
-               }
+               if (t.visits != null)
+                  countTo($("#heroVisits"), t.visits, fmtCompact, 2200);
                setProp("visits", fmtFull(t.visits));
                setProp("playing", fmtFull(t.playing));
                setProp("peak", t.peak != null ? fmtFull(t.peak) : "—");
