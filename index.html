@@ -56,6 +56,7 @@
             --sky: #5ec4ff;
             --mint: #5fe0a0;
             --coral: #ff7b6b;
+            --velvet: #7ea6ff;
             --on-gold: #1a1204;
             --glow: rgba(94, 196, 255, 0.13);
             --grid: rgba(255, 255, 255, 0.03);
@@ -76,6 +77,7 @@
             --sky: #0a6fb0;
             --mint: #0e8a55;
             --coral: #c8412f;
+            --velvet: #2f6bf0;
             --on-gold: #ffffff;
             --glow: rgba(10, 111, 176, 0.09);
             --grid: rgba(14, 22, 33, 0.045);
@@ -1232,6 +1234,144 @@
             font-size: 15px;
          }
 
+         /* Velvet Studios store */
+         .store {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+            gap: clamp(28px, 4vw, 56px);
+            align-items: center;
+            padding: clamp(24px, 4vw, 48px);
+            border: 1px solid color-mix(in srgb, var(--velvet) 35%, var(--line));
+            border-radius: 24px;
+            background: radial-gradient(
+                  120% 90% at 100% 0%,
+                  color-mix(in srgb, var(--velvet) 14%, transparent),
+                  transparent 60%
+               ),
+               var(--surface);
+         }
+         .store-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--velvet);
+         }
+         .store-brand .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+            background: var(--velvet);
+         }
+         .store h3 {
+            font-size: clamp(30px, 3.6vw, 46px);
+            line-height: 1.02;
+            letter-spacing: -0.035em;
+            font-weight: 800;
+            margin: 14px 0;
+         }
+         .store-copy > p {
+            color: var(--muted);
+            max-width: 460px;
+         }
+         .store-cats {
+            list-style: none;
+            margin: 26px 0 28px;
+            border-top: 1px solid var(--line);
+         }
+         .store-cats li {
+            display: grid;
+            grid-template-columns: 36px 1fr;
+            gap: 14px;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--line);
+         }
+         .store-cats i {
+            font-size: 18px;
+            color: var(--velvet);
+            text-align: center;
+         }
+         .store-cats b {
+            display: block;
+            font-size: 17px;
+         }
+         .store-cats span {
+            color: var(--muted);
+            font-size: 14px;
+         }
+         .btn-velvet {
+            background: var(--velvet);
+            color: #fff;
+            box-shadow: 0 12px 30px -14px var(--velvet);
+         }
+         .btn-velvet:hover {
+            box-shadow: 0 16px 40px -10px var(--velvet);
+         }
+         .store-pay {
+            margin-top: 14px;
+            font-size: 13px;
+            color: var(--faint);
+         }
+         .store-shot {
+            display: block;
+            text-decoration: none;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            overflow: hidden;
+            background: var(--bg-2);
+            box-shadow: var(--shadow);
+            transition:
+               transform 0.4s var(--ease),
+               border-color 0.3s;
+         }
+         .store-shot:hover {
+            transform: translateY(-4px);
+            border-color: var(--velvet);
+         }
+         .store-shot .chrome {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--line);
+            font-size: 13px;
+         }
+         .store-shot .url {
+            flex: 1;
+            min-width: 0;
+            padding: 4px 10px;
+            border-radius: 7px;
+            background: var(--surface);
+            font-family: var(--mono);
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+         }
+         .store-shot .url i {
+            color: var(--mint);
+            margin-right: 6px;
+            font-size: 11px;
+         }
+         .store-shot .pic {
+            aspect-ratio: 1200 / 630;
+            background: linear-gradient(
+               135deg,
+               color-mix(in srgb, var(--velvet) 30%, var(--surface-2)),
+               var(--surface-2)
+            );
+         }
+         .store-shot .pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+         .i-velvet {
+            color: var(--velvet);
+         }
+
          .price-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1584,6 +1724,12 @@
                border-left: 0;
                border-top: 1px solid var(--line);
             }
+            .store {
+               grid-template-columns: 1fr;
+            }
+            .store-shot {
+               order: -1;
+            }
          }
          @media (max-width: 560px) {
             body {
@@ -1674,6 +1820,7 @@
                <a href="#about" data-nav>About</a>
                <a href="#games" data-nav>Games</a>
                <a href="#work" data-nav>Showcase</a>
+               <a href="#store" data-nav>Store</a>
                <a href="#pricing" data-nav>Pricing</a>
                <a href="#contact" data-nav>Contact</a>
             </nav>
@@ -1912,6 +2059,96 @@
             </div>
          </section>
 
+         <section class="block" id="store">
+            <div class="wrap">
+               <div class="sec-head">
+                  <h2 class="sec-title reveal" data-scramble>
+                     Ready-made assets
+                  </h2>
+                  <p class="sec-note reveal">
+                     Don't need anything custom? My store has systems you can
+                     drop into your game today.
+                  </p>
+               </div>
+               <div class="store reveal">
+                  <div class="store-copy">
+                     <span class="store-brand"
+                        ><span class="dot"></span>Velvet Studios</span
+                     >
+                     <h3>Scripts, models and UI kits for Roblox developers.</h3>
+                     <p>
+                        Every asset is tested in a live game before it goes on
+                        sale, so you know it holds up with real players.
+                     </p>
+                     <ul class="store-cats">
+                        <li>
+                           <i class="fa-regular fa-file-code"></i>
+                           <div>
+                              <b>Scripts</b
+                              ><span
+                                 >Systems you can drop straight into your
+                                 game</span
+                              >
+                           </div>
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-cube"></i>
+                           <div>
+                              <b>3D models</b
+                              ><span>Assets ready to import into Studio</span>
+                           </div>
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-table-columns"></i>
+                           <div>
+                              <b>UI kits</b
+                              ><span
+                                 >Interfaces you can restyle to fit your
+                                 game</span
+                              >
+                           </div>
+                        </li>
+                     </ul>
+                     <a
+                        class="btn btn-velvet magnetic"
+                        href="https://velvetstudios.shop"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="fa-solid fa-bag-shopping"></i> Browse the
+                        store</a
+                     >
+                     <p class="store-pay">
+                        Pay with card, PayPal, Apple Pay, Google Pay or Cash
+                        App.
+                     </p>
+                  </div>
+                  <a
+                     class="store-shot"
+                     href="https://velvetstudios.shop"
+                     target="_blank"
+                     rel="noopener"
+                     aria-label="Open velvetstudios.shop"
+                  >
+                     <div class="chrome">
+                        <span class="lights"><i></i><i></i><i></i></span>
+                        <span class="url"
+                           ><i class="fa-solid fa-lock"></i
+                           >velvetstudios.shop</span
+                        >
+                     </div>
+                     <div class="pic">
+                        <img
+                           src="https://velvetstudios.shop/og-image.jpg"
+                           alt="Velvet Studios store preview"
+                           loading="lazy"
+                           onerror="this.remove()"
+                        />
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </section>
+
          <section class="block" id="pricing">
             <div class="wrap">
                <div class="sec-head">
@@ -2019,6 +2256,20 @@
                         rel="noopener"
                         ><i class="fa-brands fa-discord bi i-discord"></i>
                         <div><b>Discord</b><span>Fimigon</span></div>
+                        <i class="fa-solid fa-arrow-right go"></i
+                     ></a>
+                     <a
+                        class="lrow"
+                        href="https://velvetstudios.shop"
+                        target="_blank"
+                        rel="noopener"
+                        ><i class="fa-solid fa-bag-shopping bi i-velvet"></i>
+                        <div>
+                           <b>Velvet Studios</b
+                           ><span
+                              >Scripts, models and UI kits ready to buy</span
+                           >
+                        </div>
                         <i class="fa-solid fa-arrow-right go"></i
                      ></a>
                      <a
@@ -2443,9 +2694,15 @@
                },
                { rootMargin: "-45% 0px -50% 0px" },
             );
-            ["top", "about", "games", "work", "pricing", "contact"].forEach(
-               (id) => spy.observe(document.getElementById(id)),
-            );
+            [
+               "top",
+               "about",
+               "games",
+               "work",
+               "store",
+               "pricing",
+               "contact",
+            ].forEach((id) => spy.observe(document.getElementById(id)));
 
             const GLYPHS = "!<>-_\\/[]{}=+*^?#01";
             function scramble(el) {
