@@ -399,39 +399,6 @@
          .btn-ghost:hover {
             border-color: var(--text);
          }
-
-         .studio {
-            margin-top: 64px;
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            overflow: hidden;
-            background: color-mix(in srgb, var(--surface) 90%, transparent);
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow);
-            transition: transform 0.2s ease-out;
-         }
-         .studio-bar {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 10px 14px;
-            border-bottom: 1px solid var(--line);
-            font-size: 13px;
-            color: var(--muted);
-            background: var(--bg-2);
-         }
-         .studio-bar .file {
-            font-family: var(--mono);
-            color: var(--text);
-         }
-         .studio-bar .status {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--mono);
-            font-size: 12px;
-         }
          .lights {
             display: flex;
             gap: 6px;
@@ -441,246 +408,6 @@
             height: 11px;
             border-radius: 50%;
             background: var(--line-2);
-         }
-         .studio-body {
-            display: grid;
-            grid-template-columns: 210px minmax(0, 1fr) 270px;
-            grid-template-rows: minmax(0, 1fr);
-            height: 380px;
-            overflow: hidden;
-         }
-         .studio-body > * {
-            min-height: 0;
-            min-width: 0;
-         }
-         .panel-h {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 9px 14px;
-            font-size: 13px;
-            font-weight: 600;
-            border-bottom: 1px solid var(--line);
-            color: var(--text);
-         }
-         .panel-h span {
-            font-weight: 400;
-            color: var(--faint);
-            font-family: var(--mono);
-            font-size: 12px;
-         }
-         .explorer {
-            border-right: 1px solid var(--line);
-            overflow: auto;
-            scrollbar-width: thin;
-         }
-         .tree {
-            list-style: none;
-            font-size: 13px;
-            padding: 6px 0;
-         }
-         .tree li {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 4px 12px;
-            white-space: nowrap;
-            cursor: default;
-            color: var(--muted);
-         }
-         .tree li i {
-            width: 14px;
-            flex-shrink: 0;
-            text-align: center;
-            font-size: 12px;
-         }
-         .tree li .nm {
-            min-width: 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-         }
-         .tree li .tv {
-            flex-shrink: 0;
-         }
-         .tree li.d1 {
-            padding-left: 26px;
-         }
-         .tree li.d2 {
-            padding-left: 42px;
-         }
-         .tree li.tg {
-            cursor: pointer;
-            color: var(--text);
-         }
-         .tree li.tg:hover,
-         .tree li.sel {
-            background: color-mix(in srgb, var(--sky) 14%, transparent);
-         }
-         .tree li .tv {
-            margin-left: auto;
-            font-family: var(--mono);
-            font-size: 11px;
-            color: var(--faint);
-         }
-         .tree .ic-ws {
-            color: var(--sky);
-         }
-         .tree .ic-f {
-            color: var(--gold);
-         }
-         .tree .ic-g {
-            color: var(--mint);
-         }
-         .tree .ic-s {
-            color: var(--coral);
-         }
-         .editor {
-            display: flex;
-            flex-direction: column;
-            min-width: 0;
-            min-height: 0;
-            overflow: hidden;
-         }
-         .tabs {
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid var(--line);
-            font-size: 13px;
-            flex-shrink: 0;
-         }
-         .tabs span {
-            padding: 9px 16px;
-            color: var(--faint);
-            border-right: 1px solid var(--line);
-            display: flex;
-            gap: 8px;
-            align-items: center;
-         }
-         .tabs span.on {
-            color: var(--text);
-            background: var(--surface-2);
-            box-shadow: inset 0 2px 0 var(--sky);
-         }
-         .tabs .hint {
-            margin-left: auto;
-            border: 0;
-            font-size: 12px;
-            color: var(--faint);
-            background: none;
-            box-shadow: none;
-         }
-         .viewport {
-            position: relative;
-            flex: 1;
-            min-height: 0;
-            background: radial-gradient(
-               ellipse at 50% 30%,
-               var(--surface-2),
-               transparent 70%
-            );
-         }
-         .viewport canvas {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            display: block;
-         }
-         @keyframes blink {
-            50% {
-               opacity: 0;
-            }
-         }
-         .props {
-            border-left: 1px solid var(--line);
-            overflow: auto;
-            scrollbar-width: thin;
-         }
-         .props dl {
-            font-size: 13px;
-         }
-         .props .row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            border-bottom: 1px solid var(--line);
-         }
-         .props dt {
-            padding: 7px 12px;
-            color: var(--muted);
-            border-right: 1px solid var(--line);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-         }
-         .props dd {
-            padding: 7px 12px;
-            font-family: var(--mono);
-            font-size: 12px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            transition: background 0.8s;
-         }
-         .props dd.flash {
-            background: color-mix(in srgb, var(--gold) 28%, transparent);
-            transition: none;
-         }
-         .props .grp {
-            padding: 6px 12px;
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--text);
-            background: var(--bg-2);
-            border-bottom: 1px solid var(--line);
-         }
-         .output {
-            border-top: 1px solid var(--line);
-            position: relative;
-            z-index: 1;
-            background: color-mix(in srgb, var(--surface) 96%, transparent);
-         }
-         .term {
-            font-family: var(--mono);
-            font-size: 12px;
-            line-height: 1.75;
-            padding: 8px 14px;
-            height: 132px;
-            overflow: auto;
-            color: var(--muted);
-            scrollbar-width: thin;
-         }
-         .term .l {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-         }
-         .term .ts {
-            color: var(--faint);
-            margin-right: 10px;
-         }
-         .term .ok .m {
-            color: var(--text);
-         }
-         .term .ok .m::before {
-            content: "✓ ";
-            color: var(--mint);
-         }
-         .term .warn .m::before {
-            content: "↻ ";
-            color: var(--gold);
-         }
-         .term .err .m {
-            color: var(--gold);
-         }
-         .term .err .m::before {
-            content: "! ";
-         }
-         .term .warn {
-            opacity: 0.6;
-         }
-         .term .info .m::before {
-            content: "› ";
-            color: var(--faint);
          }
 
          .block {
@@ -924,18 +651,6 @@
          .game:hover {
             border-color: var(--line-2);
             box-shadow: var(--shadow);
-         }
-         .game.ping {
-            animation: ping 1.4s var(--ease);
-         }
-         @keyframes ping {
-            0%,
-            40% {
-               box-shadow: 0 0 0 3px var(--sky);
-            }
-            100% {
-               box-shadow: 0 0 0 0 transparent;
-            }
          }
          .spot::before {
             content: "";
@@ -1659,12 +1374,6 @@
          }
 
          @media (max-width: 1060px) {
-            .studio-body {
-               grid-template-columns: 1fr 250px;
-            }
-            .explorer {
-               display: none;
-            }
             .about-grid {
                grid-template-columns: 1fr;
             }
@@ -1711,19 +1420,6 @@
             .menu-btn {
                display: grid;
             }
-            .studio-body {
-               grid-template-columns: 1fr;
-               grid-template-rows: auto;
-               height: auto;
-            }
-            .viewport {
-               height: 300px;
-               flex: none;
-            }
-            .props {
-               border-left: 0;
-               border-top: 1px solid var(--line);
-            }
             .store {
                grid-template-columns: 1fr;
             }
@@ -1744,15 +1440,6 @@
             }
             .hero {
                padding-top: calc(var(--topbar) + 40px);
-            }
-            .studio {
-               margin-top: 44px;
-            }
-            .viewport {
-               height: 260px;
-            }
-            .tabs .hint {
-               display: none;
             }
             .totals {
                grid-template-columns: 1fr;
@@ -1817,11 +1504,11 @@
                />Fimigon</a
             >
             <nav class="nav" id="nav" aria-label="Sections">
-               <a href="#about" data-nav>About</a>
                <a href="#games" data-nav>Games</a>
                <a href="#work" data-nav>Showcase</a>
-               <a href="#store" data-nav>Store</a>
+               <a href="#about" data-nav>About</a>
                <a href="#pricing" data-nav>Pricing</a>
+               <a href="#store" data-nav>Store</a>
                <a href="#contact" data-nav>Contact</a>
             </nav>
             <div class="top-actions">
@@ -1882,54 +1569,67 @@
                      >
                   </div>
                </div>
+            </div>
+         </section>
 
-               <div class="studio tilt-soft" id="studio">
-                  <div class="studio-bar">
-                     <span class="lights"><i></i><i></i><i></i></span>
-                     <span class="file">fimigon.rbxl</span>
-                     <span class="status" id="syncStatus">connecting</span>
-                  </div>
-                  <div class="studio-body">
-                     <aside class="explorer" aria-label="Explorer">
-                        <div class="panel-h">Explorer</div>
-                        <ul class="tree" id="tree"></ul>
-                     </aside>
-                     <div class="editor">
-                        <div class="tabs">
-                           <span class="on"
-                              ><i class="fa-solid fa-cube"></i>Viewport</span
-                           ><span class="hint"
-                              >Tower height is visits. Blocks are players
-                              online.</span
-                           >
-                        </div>
-                        <div class="viewport">
-                           <canvas
-                              id="vp"
-                              role="img"
-                              aria-label="3D view of my games as towers sized by visits, with blocks for players online"
-                           ></canvas>
-                        </div>
+         <section class="block" id="games">
+            <div class="wrap">
+               <div class="sec-head">
+                  <h2 class="sec-title reveal" data-scramble>
+                     Games I've worked on
+                  </h2>
+                  <p class="sec-note reveal">
+                     Every number here is pulled live from Roblox when you open
+                     this page.
+                  </p>
+               </div>
+
+               <div class="totals reveal">
+                  <div class="total">
+                     <div class="k">Total visits across all games</div>
+                     <div class="v" id="tVisits">
+                        <span class="skel">0</span>
                      </div>
-                     <aside class="props" aria-label="Live stats">
-                        <div class="panel-h">
-                           Properties <span>Fimigon</span>
-                        </div>
-                        <dl id="props"></dl>
-                     </aside>
+                     <div class="s" id="tVisitsSub">&nbsp;</div>
                   </div>
-                  <div class="output">
-                     <div class="panel-h">
-                        Output <span>live Roblox API calls</span>
+                  <div class="total">
+                     <div class="k"><i class="pulse"></i>Playing right now</div>
+                     <div class="v" id="tPlaying">
+                        <span class="skel">0</span>
                      </div>
-                     <div
-                        class="term"
-                        id="term"
-                        role="log"
-                        aria-live="off"
-                     ></div>
+                     <div class="s">All games combined</div>
+                  </div>
+                  <div class="total">
+                     <div class="k">Combined peak CCU</div>
+                     <div class="v" id="tPeak"><span class="skel">0</span></div>
+                     <div class="s">Sum of each game's peak</div>
+                  </div>
+                  <div class="total">
+                     <div class="k">Favorites</div>
+                     <div class="v" id="tFavs"><span class="skel">0</span></div>
+                     <div class="s" id="tGames">&nbsp;</div>
                   </div>
                </div>
+
+               <div class="contrib" id="contrib"></div>
+               <div class="filters" id="filters"></div>
+               <div class="games-grid" id="gamesGrid"></div>
+               <p class="sync-note" id="syncNote"></p>
+            </div>
+         </section>
+
+         <section class="block" id="work">
+            <div class="wrap">
+               <div class="sec-head">
+                  <h2 class="sec-title reveal" data-scramble>
+                     Systems showcase
+                  </h2>
+                  <p class="sec-note reveal">
+                     Click any system to watch it run or flip through
+                     screenshots.
+                  </p>
+               </div>
+               <div class="work-grid" id="workGrid"></div>
             </div>
          </section>
 
@@ -1998,64 +1698,92 @@
             <div class="marquee" id="marquee" aria-label="Skills"></div>
          </section>
 
-         <section class="block" id="games">
+         <section class="block" id="pricing">
             <div class="wrap">
                <div class="sec-head">
-                  <h2 class="sec-title reveal" data-scramble>
-                     Games I've worked on
-                  </h2>
+                  <h2 class="sec-title reveal" data-scramble>Pricing</h2>
                   <p class="sec-note reveal">
-                     Every number here is pulled live from Roblox when you open
-                     this page.
+                     Base prices. Pay in USD or Robux, and message me for
+                     anything that doesn't fit a box.
                   </p>
                </div>
-
-               <div class="totals reveal">
-                  <div class="total">
-                     <div class="k">Total visits across all games</div>
-                     <div class="v" id="tVisits">
-                        <span class="skel">0</span>
-                     </div>
-                     <div class="s" id="tVisitsSub">&nbsp;</div>
-                  </div>
-                  <div class="total">
-                     <div class="k"><i class="pulse"></i>Playing right now</div>
-                     <div class="v" id="tPlaying">
-                        <span class="skel">0</span>
-                     </div>
-                     <div class="s">All games combined</div>
-                  </div>
-                  <div class="total">
-                     <div class="k">Combined peak CCU</div>
-                     <div class="v" id="tPeak"><span class="skel">0</span></div>
-                     <div class="s">Sum of each game's peak</div>
-                  </div>
-                  <div class="total">
-                     <div class="k">Favorites</div>
-                     <div class="v" id="tFavs"><span class="skel">0</span></div>
-                     <div class="s" id="tGames">&nbsp;</div>
-                  </div>
+               <div class="price-grid">
+                  <article class="plan spot reveal">
+                     <h3>Basic script</h3>
+                     <div class="price">$15</div>
+                     <div class="robux">or 4,300 Robux</div>
+                     <p class="desc">
+                        Simple scripts like tools, GUIs and datastores.
+                     </p>
+                     <ul>
+                        <li><i class="fa-solid fa-check"></i>GUI scripts</li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>Basic game mechanics
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>Up to 3 revisions
+                        </li>
+                        <li class="no">
+                           <i class="fa-solid fa-xmark"></i>Priority support
+                        </li>
+                     </ul>
+                     <a href="#contact" class="btn btn-ghost"
+                        >Order a basic script</a
+                     >
+                  </article>
+                  <article class="plan featured spot reveal" style="--d: 0.08s">
+                     <span class="pop">Most popular</span>
+                     <h3>Advanced script</h3>
+                     <div class="price">$75</div>
+                     <div class="robux">or 21,500 Robux</div>
+                     <p class="desc">
+                        Complex systems like inventories, skill trees and
+                        building systems.
+                     </p>
+                     <ul>
+                        <li>
+                           <i class="fa-solid fa-check"></i>Complex game
+                           mechanics
+                        </li>
+                        <li><i class="fa-solid fa-check"></i>Custom systems</li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>Up to 7 revisions
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>Priority support
+                        </li>
+                     </ul>
+                     <a href="#contact" class="btn btn-primary"
+                        >Order an advanced script</a
+                     >
+                  </article>
+                  <article class="plan spot reveal" style="--d: 0.16s">
+                     <h3>Custom project</h3>
+                     <div class="price">Let's talk</div>
+                     <div class="robux">Quoted per project</div>
+                     <p class="desc">
+                        Large-scale work, full games or anything unusual.
+                     </p>
+                     <ul>
+                        <li>
+                           <i class="fa-solid fa-check"></i>Complete custom
+                           development
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>Unlimited revisions
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>Dedicated support
+                        </li>
+                        <li>
+                           <i class="fa-solid fa-check"></i>Project consultation
+                        </li>
+                     </ul>
+                     <a href="#contact" class="btn btn-ghost"
+                        >Request a quote</a
+                     >
+                  </article>
                </div>
-
-               <div class="contrib" id="contrib"></div>
-               <div class="filters" id="filters"></div>
-               <div class="games-grid" id="gamesGrid"></div>
-               <p class="sync-note" id="syncNote"></p>
-            </div>
-         </section>
-
-         <section class="block" id="work">
-            <div class="wrap">
-               <div class="sec-head">
-                  <h2 class="sec-title reveal" data-scramble>
-                     Systems showcase
-                  </h2>
-                  <p class="sec-note reveal">
-                     Click any system to watch it run or flip through
-                     screenshots.
-                  </p>
-               </div>
-               <div class="work-grid" id="workGrid"></div>
             </div>
          </section>
 
@@ -2145,95 +1873,6 @@
                         />
                      </div>
                   </a>
-               </div>
-            </div>
-         </section>
-
-         <section class="block" id="pricing">
-            <div class="wrap">
-               <div class="sec-head">
-                  <h2 class="sec-title reveal" data-scramble>Pricing</h2>
-                  <p class="sec-note reveal">
-                     Base prices. Pay in USD or Robux, and message me for
-                     anything that doesn't fit a box.
-                  </p>
-               </div>
-               <div class="price-grid">
-                  <article class="plan spot reveal">
-                     <h3>Basic script</h3>
-                     <div class="price">$15</div>
-                     <div class="robux">or 4,300 Robux</div>
-                     <p class="desc">
-                        Simple scripts like tools, GUIs and datastores.
-                     </p>
-                     <ul>
-                        <li><i class="fa-solid fa-check"></i>GUI scripts</li>
-                        <li>
-                           <i class="fa-solid fa-check"></i>Basic game mechanics
-                        </li>
-                        <li>
-                           <i class="fa-solid fa-check"></i>Up to 3 revisions
-                        </li>
-                        <li class="no">
-                           <i class="fa-solid fa-xmark"></i>Priority support
-                        </li>
-                     </ul>
-                     <a href="#contact" class="btn btn-ghost"
-                        >Order a basic script</a
-                     >
-                  </article>
-                  <article class="plan featured spot reveal" style="--d: 0.08s">
-                     <span class="pop">Most popular</span>
-                     <h3>Advanced script</h3>
-                     <div class="price">$75</div>
-                     <div class="robux">or 21,500 Robux</div>
-                     <p class="desc">
-                        Complex systems like inventories, skill trees and
-                        building systems.
-                     </p>
-                     <ul>
-                        <li>
-                           <i class="fa-solid fa-check"></i>Complex game
-                           mechanics
-                        </li>
-                        <li><i class="fa-solid fa-check"></i>Custom systems</li>
-                        <li>
-                           <i class="fa-solid fa-check"></i>Up to 7 revisions
-                        </li>
-                        <li>
-                           <i class="fa-solid fa-check"></i>Priority support
-                        </li>
-                     </ul>
-                     <a href="#contact" class="btn btn-primary"
-                        >Order an advanced script</a
-                     >
-                  </article>
-                  <article class="plan spot reveal" style="--d: 0.16s">
-                     <h3>Custom project</h3>
-                     <div class="price">Let's talk</div>
-                     <div class="robux">Quoted per project</div>
-                     <p class="desc">
-                        Large-scale work, full games or anything unusual.
-                     </p>
-                     <ul>
-                        <li>
-                           <i class="fa-solid fa-check"></i>Complete custom
-                           development
-                        </li>
-                        <li>
-                           <i class="fa-solid fa-check"></i>Unlimited revisions
-                        </li>
-                        <li>
-                           <i class="fa-solid fa-check"></i>Dedicated support
-                        </li>
-                        <li>
-                           <i class="fa-solid fa-check"></i>Project consultation
-                        </li>
-                     </ul>
-                     <a href="#contact" class="btn btn-ghost"
-                        >Request a quote</a
-                     >
-                  </article>
                </div>
             </div>
          </section>
@@ -2394,7 +2033,7 @@
                   name: "Snowboard for Brainrots",
                   desc: "Snowboard to OP brainrots, avoid the void and bring them back to your base for cash.",
                   roles: ["Scripting"],
-                  peakCCU: 32,
+                  peakCCU: null,
                   thumb: "https://tr.rbxcdn.com/180DAY-8d85cef1cb455d03c1ed349b56750016/768/432/Image/Webp/noFilter",
                },
                {
@@ -2602,20 +2241,6 @@
                requestAnimationFrame(step);
             }
 
-            const term = $("#term");
-            function log(msg, type = "info") {
-               const line = document.createElement("div");
-               line.className = "l " + type;
-               line.innerHTML = `<span class="ts">${clock()}</span><span class="m">${esc(msg)}</span>`;
-               term.appendChild(line);
-               while (term.children.length > 80) term.firstChild.remove();
-               term.scrollTop = term.scrollHeight;
-            }
-            function setStatus(text, live) {
-               $("#syncStatus").innerHTML =
-                  (live ? '<i class="pulse"></i>' : "") + esc(text);
-            }
-
             const themeBtn = $("#themeToggle");
             themeBtn.addEventListener("click", () => {
                const next =
@@ -2704,11 +2329,11 @@
             );
             [
                "top",
-               "about",
                "games",
                "work",
-               "store",
+               "about",
                "pricing",
+               "store",
                "contact",
             ].forEach((id) => spy.observe(document.getElementById(id)));
 
@@ -2775,18 +2400,6 @@
                      tilt.style.transform = "";
                });
 
-               const studio = $("#studio");
-               studio.addEventListener("pointermove", (e) => {
-                  const r = studio.getBoundingClientRect();
-                  const px = (e.clientX - r.left) / r.width - 0.5,
-                     py = (e.clientY - r.top) / r.height - 0.5;
-                  studio.style.transform = `perspective(1600px) rotateX(${(-py * 2.2).toFixed(2)}deg) rotateY(${(px * 2.2).toFixed(2)}deg)`;
-               });
-               studio.addEventListener(
-                  "pointerleave",
-                  () => (studio.style.transform = ""),
-               );
-
                $$(".magnetic").forEach((b) => {
                   b.addEventListener("pointermove", (e) => {
                      const r = b.getBoundingClientRect();
@@ -2844,7 +2457,6 @@
                   col.dot = cs.getPropertyValue("--faint").trim();
                   col.hot = cs.getPropertyValue("--sky").trim();
                   col.gold = cs.getPropertyValue("--gold").trim();
-                  if (window.__vpColors) window.__vpColors();
                   if (reduceMotion) draw(0);
                };
                function resize() {
@@ -2973,6 +2585,7 @@
             }));
             let activeRole = "All";
             let lastSync = null;
+            let syncFailed = false;
             let renderedOrder = "";
 
             const snapshot = store.get("fim:snapshot");
@@ -3169,78 +2782,6 @@
                );
             }
 
-            function renderTree() {
-               const gs = sortedGames();
-               $("#tree").innerHTML = `
-    <li><i class="fa-solid fa-cube ic-ws"></i>Workspace</li>
-    <li class="d1"><i class="fa-solid fa-folder-open ic-f"></i>Games</li>
-    ${gs.map((g) => `<li class="d2 tg" data-jump="${g.idx}" title="Jump to ${esc(g.name)}"><i class="fa-solid fa-gamepad ic-g"></i><span class="nm">${esc(g.name)}</span><span class="tv">${g.visits != null ? fmtCompact(g.visits) : ""}</span></li>`).join("")}
-    <li class="d1"><i class="fa-solid fa-folder ic-f"></i>Showcase <span class="tv">${SHOWCASE.length}</span></li>
-    <li><i class="fa-solid fa-server ic-ws"></i>ServerScriptService</li>
-    <li class="d1"><i class="fa-regular fa-file-code ic-s"></i>StatsService</li>
-    <li class="d1"><i class="fa-regular fa-file-code ic-s"></i>DataService</li>`;
-            }
-            function jumpToGame(idx) {
-               if (activeRole !== "All") {
-                  activeRole = "All";
-                  renderFilters();
-                  renderGames(false);
-               }
-               const card = document.getElementById("game-" + idx);
-               if (!card) return;
-               card.scrollIntoView({
-                  behavior: reduceMotion ? "auto" : "smooth",
-                  block: "center",
-               });
-               card.classList.remove("ping");
-               void card.offsetWidth;
-               card.classList.add("ping");
-            }
-            $("#tree").addEventListener("click", (e) => {
-               const li = e.target.closest("[data-jump]");
-               if (li) jumpToGame(+li.dataset.jump);
-            });
-            $("#tree").addEventListener("pointerover", (e) => {
-               const li = e.target.closest("[data-jump]");
-               viewport.focus(li ? +li.dataset.jump : null);
-            });
-            $("#tree").addEventListener("pointerleave", () =>
-               viewport.focus(null),
-            );
-
-            const PROPS = [
-               ["grp", "Profile"],
-               ["Name", "Fimigon"],
-               ["Experience", "8 years"],
-               ["RobloxSince", "2017"],
-               ["grp", "Live stats"],
-               ["TotalVisits", "visits"],
-               ["PlayingNow", "playing"],
-               ["CombinedPeakCCU", "peak"],
-               ["Favorites", "favorites"],
-               ["Games", "games"],
-            ];
-            $("#props").innerHTML = PROPS.map(([k, v]) =>
-               k === "grp"
-                  ? `<div class="grp">${esc(v)}</div>`
-                  : [
-                         "visits",
-                         "playing",
-                         "peak",
-                         "favorites",
-                         "games",
-                      ].includes(v)
-                    ? `<div class="row"><dt>${k}</dt><dd data-p="${v}">…</dd></div>`
-                    : `<div class="row"><dt>${k}</dt><dd>${esc(v)}</dd></div>`,
-            ).join("");
-            function setProp(key, text) {
-               const dd = $(`#props [data-p="${key}"]`);
-               if (!dd || dd.textContent === text) return;
-               dd.textContent = text;
-               dd.classList.add("flash");
-               setTimeout(() => dd.classList.remove("flash"), 60);
-            }
-
             function updateTotals() {
                const t = totals();
                countTo($("#tVisits"), t.visits, fmtCompact, 2000);
@@ -3254,16 +2795,13 @@
                   t.playing != null ? fmtFull(t.playing) : "…";
                if (t.visits != null)
                   countTo($("#heroVisits"), t.visits, fmtCompact, 2200);
-               setProp("visits", fmtFull(t.visits));
-               setProp("playing", fmtFull(t.playing));
-               setProp("peak", t.peak != null ? fmtFull(t.peak) : "—");
-               setProp("favorites", fmtFull(t.favorites));
-               setProp("games", String(games.length));
                $("#syncNote").innerHTML = lastSync
                   ? `<i class="pulse"></i>Synced with Roblox at ${clock(lastSync)}.`
                   : snapshot && snapshot.at
                     ? `Showing the last saved numbers from ${new Date(snapshot.at).toLocaleString()} while Roblox responds.`
-                    : "Fetching numbers from Roblox…";
+                    : syncFailed
+                      ? "Roblox didn't respond. Trying again in a minute."
+                      : "Fetching numbers from Roblox…";
             }
 
             function updateAll() {
@@ -3273,9 +2811,7 @@
                if (order !== renderedOrder) renderGames(false);
                else updateGames();
                renderContrib();
-               renderTree();
                updateTotals();
-               viewport.update();
             }
 
             let preferredRoute = store.get("fim:route");
@@ -3329,28 +2865,18 @@
                   clearTimeout(timer);
                }
             }
-            async function rbx(url, label) {
+            async function rbx(url) {
                for (const r of routesFor(url)) {
-                  const t0 = performance.now();
                   try {
                      const json = await fetchJSON(r.url);
-                     log(
-                        `GET ${label} 200 via ${r.name} in ${Math.round(performance.now() - t0)}ms`,
-                        "ok",
-                     );
                      if (preferredRoute !== r.name) {
                         preferredRoute = r.name;
                         store.set("fim:route", r.name);
                      }
                      return json;
-                  } catch (e) {
-                     log(
-                        `${label} via ${r.name} failed (${e.name === "AbortError" ? "timeout" : e.message}), rerouting`,
-                        "warn",
-                     );
-                  }
+                  } catch (e) {}
                }
-               throw new Error("All routes failed for " + label);
+               throw new Error("All routes failed for " + url);
             }
 
             async function resolveUniverses() {
@@ -3361,21 +2887,17 @@
                });
                const still = games.filter((g) => !g.universeId);
                if (!still.length) return;
-               log(`resolving ${still.length} place ids to universe ids`);
                await Promise.all(
                   still.map(async (g) => {
                      try {
                         const j = await rbx(
                            `https://apis.roblox.com/universes/v1/places/${g.placeId}/universe`,
-                           `universe for ${g.name}`,
                         );
                         if (j && j.universeId) {
                            g.universeId = j.universeId;
                            cache[g.placeId] = j.universeId;
                         }
-                     } catch (e) {
-                        log(`${g.name}: no response yet`, "warn");
-                     }
+                     } catch (e) {}
                   }),
                );
                store.set("fim:universes", cache);
@@ -3388,13 +2910,9 @@
                if (!ids.length) throw new Error("no universe ids");
                const q = ids.join(",");
                const [info, votes] = await Promise.all([
-                  rbx(
-                     `https://games.roblox.com/v1/games?universeIds=${q}`,
-                     "games/v1/games",
-                  ),
+                  rbx(`https://games.roblox.com/v1/games?universeIds=${q}`),
                   rbx(
                      `https://games.roblox.com/v1/games/votes?universeIds=${q}`,
-                     "games/v1/votes",
                   ).catch(() => null),
                ]);
                const byUni = Object.fromEntries(
@@ -3427,7 +2945,6 @@
                try {
                   const j = await rbx(
                      `https://thumbnails.roblox.com/v1/games/multiget/thumbnails?universeIds=${ids}&countPerUniverse=1&defaults=true&size=768x432&format=Png&isCircular=false`,
-                     "thumbnails",
                   );
                   (j.data || []).forEach((d) => {
                      const g = games.find((x) => x.universeId === d.universeId);
@@ -3442,9 +2959,7 @@
                      }
                   });
                   saveSnapshot();
-               } catch (e) {
-                  log("thumbnails unavailable, using saved images", "warn");
-               }
+               } catch (e) {}
             }
 
             function saveSnapshot() {
@@ -3469,548 +2984,22 @@
             async function sync() {
                if (syncing) return;
                syncing = true;
-               setStatus("syncing", false);
                try {
                   await resolveUniverses();
                   await fetchStats();
                   lastSync = new Date();
+                  syncFailed = false;
                   saveSnapshot();
-                  const t = totals();
-                  log(
-                     `synced ${games.length} games: ${fmtFull(t.visits)} visits, ${fmtFull(t.playing)} playing`,
-                     "ok",
-                  );
-                  setStatus("live", true);
                   if (!thumbsDone) {
                      thumbsDone = true;
                      fetchThumbs();
                   }
                } catch (e) {
-                  log(
-                     snapshot
-                        ? "Roblox didn't respond, showing the last saved numbers"
-                        : "Roblox didn't respond, trying again shortly",
-                     "err",
-                  );
-                  setStatus("offline", false);
+                  syncFailed = true;
                }
                updateAll();
                syncing = false;
             }
-
-            const viewport = (() => {
-               const cv = $("#vp"),
-                  ctx = cv.getContext("2d"),
-                  box = cv.parentElement;
-               const N = 9,
-                  S = 1.5;
-               let w = 0,
-                  h = 0,
-                  T = 20,
-                  ox = 0,
-                  oy = 0,
-                  maxH = 120,
-                  dpr = 1;
-               let towers = [],
-                  players = [],
-                  per = 1,
-                  hovered = null,
-                  focused = null;
-               let mouse = null,
-                  visible = true,
-                  last = performance.now();
-               const C = {};
-               const TOWER_KEYS = ["sky", "gold", "coral", "mint"];
-
-               function readColors() {
-                  const cs = getComputedStyle(document.documentElement);
-                  [
-                     "sky",
-                     "gold",
-                     "coral",
-                     "mint",
-                     "text",
-                     "muted",
-                     "faint",
-                     "line",
-                     "line-2",
-                     "surface",
-                     "surface-2",
-                     "bg",
-                  ].forEach(
-                     (k) => (C[k] = cs.getPropertyValue("--" + k).trim()),
-                  );
-                  if (reduceMotion) draw();
-               }
-               window.__vpColors = readColors;
-
-               function shade(hex, amt) {
-                  const m = /^#?([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i.exec(
-                     hex || "",
-                  );
-                  if (!m) return hex;
-                  const t = amt < 0 ? 0 : 255,
-                     p = Math.abs(amt);
-                  return (
-                     "#" +
-                     [m[1], m[2], m[3]]
-                        .map((x) =>
-                           Math.round(
-                              parseInt(x, 16) + (t - parseInt(x, 16)) * p,
-                           )
-                              .toString(16)
-                              .padStart(2, "0"),
-                        )
-                        .join("")
-                  );
-               }
-               const iso = (x, y, z = 0) => [
-                  ox + (x - y) * T,
-                  oy + ((x + y) * T) / 2 - z,
-               ];
-
-               function layout() {
-                  const order = sortedGames(),
-                     n = order.length,
-                     slots = [];
-                  const mid = (n - 1) / 2;
-                  order.forEach((g, i) =>
-                     slots.push(
-                        i % 2 ? mid + Math.ceil(i / 2) : mid - Math.ceil(i / 2),
-                     ),
-                  );
-                  const step = n > 1 ? Math.min(2.3, (N - S - 1) / (n - 1)) : 0;
-                  const start = (N - S) / 2 - (step * (n - 1)) / 2;
-                  towers = order.map((g, i) => {
-                     const old = towers.find((t) => t.g === g);
-                     const k = Math.round(
-                        Math.min(n - 1, Math.max(0, slots[i])),
-                     );
-                     const x = start + k * step,
-                        y = N - S - x;
-                     if (old) {
-                        old.x = x;
-                        old.y = y;
-                        return old;
-                     }
-                     return {
-                        g,
-                        x,
-                        y,
-                        h: 6,
-                        color: TOWER_KEYS[g.idx % TOWER_KEYS.length],
-                     };
-                  });
-               }
-
-               function resize() {
-                  const r = box.getBoundingClientRect();
-                  dpr = Math.min(devicePixelRatio || 1, 2);
-                  w = r.width;
-                  h = r.height;
-                  if (!w || !h) return;
-                  cv.width = w * dpr;
-                  cv.height = h * dpr;
-                  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-                  T = Math.max(
-                     8,
-                     Math.min((w - 30) / (2 * N), (h - 30) / (N * 1.08)),
-                  );
-                  ox = w / 2;
-                  oy = h - N * T - 26;
-                  maxH = Math.max(40, oy + (N / 2) * T - 50);
-                  if (reduceMotion) draw();
-               }
-
-               function targetHeight(t) {
-                  const max = Math.max(1, ...games.map((g) => g.visits || 0));
-                  if (t.g.visits == null) return 6;
-                  return 14 + (maxH - 14) * Math.sqrt(t.g.visits / max);
-               }
-
-               function nicePer(total) {
-                  const raw = Math.max(1, total / 70);
-                  const p = Math.pow(10, Math.floor(Math.log10(raw)));
-                  return [1, 2, 5, 10].map((m) => m * p).find((v) => v >= raw);
-               }
-               function wanderTarget(t) {
-                  const a = Math.random() * Math.PI * 2,
-                     d = S * 0.75 + 0.3 + Math.random() * 1.3;
-                  const cx = t.x + S / 2,
-                     cy = t.y + S / 2;
-                  return [
-                     Math.min(N - 0.3, Math.max(0.1, cx + Math.cos(a) * d)),
-                     Math.min(N - 0.3, Math.max(0.1, cy + Math.sin(a) * d)),
-                  ];
-               }
-               function syncPlayers() {
-                  const total = games.reduce((s, g) => s + (g.playing || 0), 0);
-                  per = nicePer(total);
-                  towers.forEach((t) => {
-                     const want = t.g.playing
-                        ? Math.max(1, Math.round(t.g.playing / per))
-                        : 0;
-                     const mine = players.filter((p) => p.t === t);
-                     for (let i = mine.length; i < want; i++) {
-                        const [x, y] = [t.x + S / 2, t.y + S + 0.1];
-                        const [tx, ty] = wanderTarget(t);
-                        players.push({
-                           t,
-                           x,
-                           y,
-                           tx,
-                           ty,
-                           wait: Math.random() * 2,
-                           phase: Math.random() * 6,
-                           speed: 0.7 + Math.random() * 0.6,
-                        });
-                     }
-                     mine
-                        .slice(want)
-                        .forEach((p) => players.splice(players.indexOf(p), 1));
-                  });
-               }
-
-               function prism(x, y, sx, sy, z, base, opts = {}) {
-                  const top = shade(base, 0.22),
-                     left = base,
-                     right = shade(base, -0.28);
-                  const a = iso(x, y, z),
-                     b = iso(x + sx, y, z),
-                     c = iso(x + sx, y + sy, z),
-                     d = iso(x, y + sy, z);
-                  const b0 = iso(x + sx, y),
-                     c0 = iso(x + sx, y + sy),
-                     d0 = iso(x, y + sy);
-                  const poly = (pts, fill) => {
-                     ctx.beginPath();
-                     pts.forEach(([px, py], i) =>
-                        i ? ctx.lineTo(px, py) : ctx.moveTo(px, py),
-                     );
-                     ctx.closePath();
-                     ctx.fillStyle = fill;
-                     ctx.fill();
-                  };
-                  poly([d, c, c0, d0], left);
-                  poly([c, b, b0, c0], right);
-                  poly([a, b, c, d], top);
-                  if (opts.bricks && z > 16) {
-                     ctx.strokeStyle = "rgba(0,0,0,.16)";
-                     ctx.lineWidth = 1;
-                     for (let k = 12; k < z - 4; k += 12) {
-                        const p1 = iso(x, y + sy, k),
-                           p2 = iso(x + sx, y + sy, k),
-                           p3 = iso(x + sx, y, k);
-                        ctx.beginPath();
-                        ctx.moveTo(p1[0], p1[1]);
-                        ctx.lineTo(p2[0], p2[1]);
-                        ctx.lineTo(p3[0], p3[1]);
-                        ctx.stroke();
-                     }
-                  }
-                  if (opts.stud) {
-                     const [sx0, sy0] = iso(x + sx / 2, y + sy / 2, z);
-                     ctx.fillStyle = shade(base, -0.1);
-                     ctx.beginPath();
-                     ctx.ellipse(
-                        sx0,
-                        sy0 + 2,
-                        T * 0.34,
-                        T * 0.17,
-                        0,
-                        0,
-                        Math.PI * 2,
-                     );
-                     ctx.fill();
-                     ctx.fillStyle = shade(base, 0.35);
-                     ctx.beginPath();
-                     ctx.ellipse(
-                        sx0,
-                        sy0 - 1,
-                        T * 0.34,
-                        T * 0.17,
-                        0,
-                        0,
-                        Math.PI * 2,
-                     );
-                     ctx.fill();
-                  }
-                  if (opts.outline) {
-                     ctx.beginPath();
-                     [a, b, b0, c0, d0, d].forEach(([px, py], i) =>
-                        i ? ctx.lineTo(px, py) : ctx.moveTo(px, py),
-                     );
-                     ctx.closePath();
-                     ctx.strokeStyle = C.text;
-                     ctx.lineWidth = 2;
-                     ctx.stroke();
-                  }
-               }
-               function hullPath(t) {
-                  const pts = [
-                     iso(t.x, t.y, t.h),
-                     iso(t.x + S, t.y, t.h),
-                     iso(t.x + S, t.y),
-                     iso(t.x + S, t.y + S),
-                     iso(t.x, t.y + S),
-                     iso(t.x, t.y + S, t.h),
-                  ];
-                  const p = new Path2D();
-                  pts.forEach(([px, py], i) =>
-                     i ? p.lineTo(px, py) : p.moveTo(px, py),
-                  );
-                  p.closePath();
-                  return p;
-               }
-
-               function drawBaseplate() {
-                  const slab = 8,
-                     A = iso(0, 0),
-                     B = iso(N, 0),
-                     Cc = iso(N, N),
-                     D = iso(0, N);
-                  const face = (pts, fill) => {
-                     ctx.beginPath();
-                     pts.forEach(([x, y], i) =>
-                        i ? ctx.lineTo(x, y) : ctx.moveTo(x, y),
-                     );
-                     ctx.closePath();
-                     ctx.fillStyle = fill;
-                     ctx.fill();
-                  };
-                  face(
-                     [D, Cc, [Cc[0], Cc[1] + slab], [D[0], D[1] + slab]],
-                     C["line-2"],
-                  );
-                  face(
-                     [Cc, B, [B[0], B[1] + slab], [Cc[0], Cc[1] + slab]],
-                     C.line,
-                  );
-                  face([A, B, Cc, D], C["surface-2"]);
-                  ctx.strokeStyle = C.line;
-                  ctx.lineWidth = 1;
-                  ctx.globalAlpha = 0.8;
-                  for (let i = 1; i < N; i++) {
-                     let p = iso(i, 0),
-                        q = iso(i, N);
-                     ctx.beginPath();
-                     ctx.moveTo(p[0], p[1]);
-                     ctx.lineTo(q[0], q[1]);
-                     ctx.stroke();
-                     p = iso(0, i);
-                     q = iso(N, i);
-                     ctx.beginPath();
-                     ctx.moveTo(p[0], p[1]);
-                     ctx.lineTo(q[0], q[1]);
-                     ctx.stroke();
-                  }
-                  ctx.globalAlpha = 1;
-               }
-
-               function drawLabel(t) {
-                  if (t.g.visits == null) return;
-                  const [x, y] = iso(t.x + S / 2, t.y + S / 2, t.h);
-                  ctx.font = `700 ${Math.max(10, Math.min(12, T * 0.6))}px "JetBrains Mono", monospace`;
-                  ctx.textAlign = "center";
-                  ctx.fillStyle = C.text;
-                  ctx.fillText(fmtCompact(t.g.visits), x, y - T * 0.45 - 6);
-               }
-
-               function drawTooltip(t) {
-                  const lines = [
-                     t.g.name,
-                     `${fmtFull(t.g.visits)} visits`,
-                     `${fmtFull(t.g.playing)} playing now`,
-                  ];
-                  ctx.font =
-                     '600 13px "Bricolage Grotesque", system-ui, sans-serif';
-                  const tw =
-                        Math.max(
-                           ...lines.map((l) => ctx.measureText(l).width),
-                        ) + 24,
-                     th = 66;
-                  const [ax, ay] = iso(t.x + S / 2, t.y + S / 2, t.h);
-                  let x = ax - tw / 2,
-                     y = ay - T - th - 14;
-                  x = Math.max(8, Math.min(w - tw - 8, x));
-                  y = Math.max(8, y);
-                  ctx.fillStyle = C.bg;
-                  ctx.strokeStyle = C["line-2"];
-                  ctx.lineWidth = 1;
-                  ctx.beginPath();
-                  ctx.roundRect
-                     ? ctx.roundRect(x, y, tw, th, 8)
-                     : ctx.rect(x, y, tw, th);
-                  ctx.fill();
-                  ctx.stroke();
-                  ctx.textAlign = "left";
-                  ctx.fillStyle = C.text;
-                  ctx.fillText(lines[0], x + 12, y + 21);
-                  ctx.font = '12px "JetBrains Mono", monospace';
-                  ctx.fillStyle = C.muted;
-                  ctx.fillText(lines[1], x + 12, y + 40);
-                  ctx.fillText(lines[2], x + 12, y + 56);
-               }
-
-               function draw() {
-                  if (!w || !h) return;
-                  ctx.clearRect(0, 0, w, h);
-                  drawBaseplate();
-                  const items = [
-                     ...towers.map((t) => ({ d: t.x + t.y + S, t })),
-                     ...players.map((p) => ({ d: p.x + p.y + 0.3, p })),
-                  ].sort((a, b) => a.d - b.d);
-                  const active = hovered ?? focused;
-                  items.forEach((it) => {
-                     if (it.t) {
-                        const t = it.t,
-                           isOn = active === t.g.idx;
-                        ctx.globalAlpha = active == null || isOn ? 1 : 0.45;
-                        prism(t.x, t.y, S, S, t.h, C[t.color], {
-                           bricks: true,
-                           stud: true,
-                           outline: isOn,
-                        });
-                        ctx.globalAlpha = 1;
-                     } else {
-                        const p = it.p,
-                           bob = Math.abs(Math.sin(p.phase)) * 2;
-                        ctx.save();
-                        ctx.translate(0, -bob);
-                        prism(
-                           p.x,
-                           p.y,
-                           0.26,
-                           0.26,
-                           Math.max(5, T * 0.38),
-                           C.text,
-                        );
-                        ctx.restore();
-                     }
-                  });
-                  towers.forEach(drawLabel);
-                  const hasData = games.some((g) => g.visits != null);
-                  ctx.textAlign = "left";
-                  ctx.font =
-                     '12px "Bricolage Grotesque", system-ui, sans-serif';
-                  ctx.fillStyle = C.faint;
-                  if (hasData) {
-                     const total = games.reduce(
-                        (s, g) => s + (g.playing || 0),
-                        0,
-                     );
-                     ctx.fillText(
-                        total
-                           ? `Each walking block is about ${fmtFull(per)} ${per === 1 ? "player" : "players"}`
-                           : "Nobody online right now",
-                        14,
-                        h - 12,
-                     );
-                  } else {
-                     ctx.textAlign = "center";
-                     ctx.font =
-                        '600 14px "Bricolage Grotesque", system-ui, sans-serif';
-                     ctx.fillStyle = C.muted;
-                     ctx.fillText("Loading visits from Roblox…", w / 2, 26);
-                  }
-                  if (hovered != null) {
-                     const t = towers.find((x) => x.g.idx === hovered);
-                     if (t) drawTooltip(t);
-                  }
-               }
-
-               function step(now) {
-                  const dt = Math.min(0.05, (now - last) / 1000);
-                  last = now;
-                  towers.forEach(
-                     (t) =>
-                        (t.h += (targetHeight(t) - t.h) * Math.min(1, dt * 3)),
-                  );
-                  players.forEach((p) => {
-                     if (p.wait > 0) {
-                        p.wait -= dt;
-                        return;
-                     }
-                     const dx = p.tx - p.x,
-                        dy = p.ty - p.y,
-                        d = Math.hypot(dx, dy);
-                     if (d < 0.05) {
-                        [p.tx, p.ty] = wanderTarget(p.t);
-                        p.wait = 0.4 + Math.random() * 2.5;
-                        return;
-                     }
-                     const v = Math.min(d, p.speed * dt);
-                     p.x += (dx / d) * v;
-                     p.y += (dy / d) * v;
-                     p.phase += dt * 10;
-                  });
-                  if (mouse) {
-                     hovered = null;
-                     const order = [...towers].sort(
-                        (a, b) => b.x + b.y - (a.x + a.y),
-                     );
-                     for (const t of order)
-                        if (
-                           ctx.isPointInPath(
-                              hullPath(t),
-                              mouse[0] * dpr,
-                              mouse[1] * dpr,
-                           )
-                        ) {
-                           hovered = t.g.idx;
-                           break;
-                        }
-                     cv.style.cursor = hovered != null ? "pointer" : "default";
-                  }
-                  if (visible) draw();
-                  requestAnimationFrame(step);
-               }
-
-               const toLocal = (e) => {
-                  const r = cv.getBoundingClientRect();
-                  return [e.clientX - r.left, e.clientY - r.top];
-               };
-               cv.addEventListener("pointermove", (e) => {
-                  mouse = toLocal(e);
-                  if (reduceMotion) {
-                     step(performance.now());
-                  }
-               });
-               cv.addEventListener("pointerdown", (e) => (mouse = toLocal(e)));
-               cv.addEventListener("pointerleave", () => {
-                  mouse = null;
-                  hovered = null;
-                  cv.style.cursor = "default";
-                  if (reduceMotion) draw();
-               });
-               cv.addEventListener("click", () => {
-                  if (hovered != null) jumpToGame(hovered);
-               });
-
-               new ResizeObserver(resize).observe(box);
-               new IntersectionObserver(
-                  ([en]) => (visible = en.isIntersecting),
-               ).observe(box);
-               layout();
-               readColors();
-               resize();
-               if (!reduceMotion) requestAnimationFrame(step);
-
-               return {
-                  update() {
-                     layout();
-                     syncPlayers();
-                     if (reduceMotion) {
-                        towers.forEach((t) => (t.h = targetHeight(t)));
-                        draw();
-                     }
-                  },
-                  focus(idx) {
-                     focused = idx;
-                     if (reduceMotion) draw();
-                  },
-               };
-            })();
 
             $("#workGrid").innerHTML = SHOWCASE.map(
                (s, i) => `
@@ -4107,14 +3096,9 @@
                if (e.key === "ArrowRight") moveLightbox(1);
             });
 
-            log("fimigon.rbxl loaded");
-            log(
-               `tracking ${games.length} experiences, ${SHOWCASE.length} showcase systems`,
-            );
             renderFilters();
             renderGames(true);
             renderContrib();
-            renderTree();
             updateTotals();
             observeReveals();
             sync();
